@@ -5,7 +5,7 @@ function Obras() {
   const [emprendimientos, setEmprendimientos] = useState([]);
   console.log('emprendimientos', emprendimientos);
   useEffect(() => {
-    fetch('http://localhost:3001/emprendimientos')
+    fetch('http://api.erconsrl.com.ar/emprendimientos')
       .then((response) => response.json())
       .then((data) => setEmprendimientos(data));
   }, []);

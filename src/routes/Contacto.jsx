@@ -9,7 +9,7 @@ function Contacto() {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
 
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch('http://api.erconsrl.com.ar/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ function MyGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetch('http://localhost:3001/carousel')
+    fetch('http://api.erconsrl.com.ar/carousel')
       .then((response) => response.json())
       .then((data) => setItemsCarousel(data));
   }, []);

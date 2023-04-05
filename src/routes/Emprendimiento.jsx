@@ -11,7 +11,7 @@ function Emprendimiento() {
   console.log('dataEmprendimiento', dataEmprendimiento);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/emprendimientos/${params.title}`)
+    fetch(`http://api.erconsrl.com.ar/emprendimientos/${params.title}`)
       .then((response) => response.json())
       .then((data) => setDataEmprendimiento(data));
   }, []);

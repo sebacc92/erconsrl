@@ -19,7 +19,7 @@ function TestimoniosSlider() {
   console.log('testimonios', testimonios);
 
   useEffect(() => {
-    fetch('http://localhost:3001/testimonios')
+    fetch('http://api.erconsrl.com.ar/testimonios')
       .then((response) => response.json())
       .then((data) => setTestimonios(data));
   }, []);

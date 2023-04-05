@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 
 function Proveedores() {
   const [proveedores, setProveedores] = useState([]);
-  console.log('proveedores', proveedores);
   useEffect(() => {
-    fetch('http://localhost:3001/proveedores')
+    fetch('http://api.erconsrl.com.ar/proveedores')
       .then((response) => response.json())
       .then((data) => setProveedores(data));
   }, []);
