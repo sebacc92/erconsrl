@@ -1,0 +1,55 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    fontFamily: {
+      'gotham-black': ['Gotham Black', 'sans-serif'],
+      'gotham-black-italic': ['Gotham Black Italic', 'sans-serif'],
+      'gotham-bold': ['Gotham Bold', 'sans-serif'],
+      'gotham-bold-italic': ['Gotham Bold Italic', 'sans-serif'],
+      'gotham-book': ['Gotham Book', 'sans-serif'],
+      'gotham-book-italic': ['Gotham Book Italic', 'sans-serif'],
+      'gotham-light': ['Gotham Light', 'sans-serif'],
+      'gotham-light-italic': ['Gotham Light Italic', 'sans-serif'],
+      'gotham-medium': ['Gotham Medium', 'sans-serif'],
+      'gotham-medium-italic': ['Gotham Medium Italic', 'sans-serif'],
+      'gotham-thin': ['Gotham Thin', 'sans-serif'],
+      'gotham-thin-italic': ['Gotham Thin Italic', 'sans-serif'],
+      'gotham-ultra': ['Gotham Ultra', 'sans-serif'],
+      'gotham-ultra-italic': ['Gotham Ultra Italic', 'sans-serif'],
+      'gotham-xlight': ['Gotham XLight', 'sans-serif'],
+      'gotham-xlight-italic': ['Gotham XLight Italic', 'sans-serif'],
+      'gotham-narrow-black': ['Gotham Narrow Black', 'sans-serif'],
+      'gotham-narrow-black-italic': [
+        'Gotham Narrow Black Italic',
+        'sans-serif',
+      ],
+      'gotham-narrow-bold': ['Gotham Narrow Bold', 'sans-serif'],
+      'gotham-narrow-bold-italic': ['Gotham Narrow Bold Italic', 'sans-serif'],
+      'gotham-narrow-book': ['Gotham Narrow Book', 'sans-serif'],
+      'gotham-narrow-book-italic': ['Gotham Narrow Book Italic', 'sans-serif'],
+      'gotham-narrow-light': ['Gotham Narrow Light', 'sans-serif'],
+      'gotham-narrow-light-italic': [
+        'Gotham Narrow Light Italic',
+        'sans-serif',
+      ],
+      'gotham-narrow-medium': ['Gotham Narrow Medium', 'sans-serif'],
+      'gotham-narrow-medium-italic': [
+        'Gotham Narrow Medium Italic',
+        'sans-serif',
+      ],
+      'gotham-narrow-thin': ['Gotham Narrow Thin', 'sans-serif'],
+      'gotham-narrow-thin-italic': ['Gotham Narrow Thin Italic', 'sans-serif'],
+      'gotham-narrow-ultra': ['Gotham Narrow Ultra', 'sans-serif'],
+      'gotham-narrow-ultra-italic': [
+        'Gotham Narrow Ultra Italic',
+        'sans-serif',
+      ],
+      'gotham-narrow-xlight': ['Gotham Narrow XLight', 'sans-serif'],
+      'gotham-narrow-xlight-italic': [
+        'Gotham Narrow XLight Italic',
+        'sans-serif',
+      ],
+    },
+  },
+};

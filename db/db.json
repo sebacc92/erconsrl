@@ -1,0 +1,35 @@
+{
+    "obrasEnConstruccion": [
+      {
+        "original": "/assets/carousel/hall.webp",
+        "fullscreen": "imagen1",
+        "title": "Torre Ecológica Solar",
+        "descriptionCard": "Edificio innovador con paneles solares y diseño sostenible."
+      },
+      {
+        "original": "/assets/carousel/interior1.webp",
+        "fullscreen": "imagen2",
+        "title": "Conjunto Residencial Boreal",
+        "descriptionCard": "Viviendas modernas y confortables en una ubicación privilegiada."
+      },
+      {
+        "original": "/assets/carousel/interior2.webp",
+        "fullscreen": "imagen3",
+        "title": "Centro Empresarial Andino",
+        "descriptionCard": "Espacios de oficinas flexibles y adaptados a las nuevas necesidades laborales."
+      },
+      {
+        "original": "/assets/carousel/hall.webp",
+        "fullscreen": "imagen1",
+        "title": "Urbanización Villa Parque",
+        "descriptionCard": "Conjunto de viviendas unifamiliares con amplias áreas verdes."
+      },
+      {
+        "original": "/assets/carousel/interior2.webp",
+        "fullscreen": "imagen2",
+        "title": "Mall Plaza Central",
+        "descriptionCard": "Centro comercial moderno, con tiendas, restaurantes y espacios de ocio."
+      }
+    ]
+  }
+  
