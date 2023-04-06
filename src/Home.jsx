@@ -8,7 +8,6 @@ import Testimonios from './components/Testimonios';
 import Emprendimientos from './components/Emprendimientos';
 import Objetivo from './components/Objetivo';
 import WhatsAppButton from './components/WhatsAppButton';
-import FacebookChat from './components/FacebookChat';
 
 function Home() {
   const [data, setData] = useState(null);
@@ -39,7 +38,7 @@ function Home() {
         {/* <FacebookChat /> */}
         <Contacto />
 
-        <WhatsAppButton />
+        <WhatsAppButton phoneNumber={data.contacto.whatsapp} />
       </div>
     )
   );

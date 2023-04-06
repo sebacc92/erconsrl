@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import MapModal from '../components/MapModal';
 import PaginatedItems from '../components/PaginatedItems';
+import WhatsAppButton from '../components/WhatsAppButton';
+import Card from '../components/Card';
 
 function Emprendimientos() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +20,7 @@ function Emprendimientos() {
   return (
     data && (
       <div className="mx-2 sm:mx-4 mt-20 lg:mt-28">
-        {/* <h3 className="mb-4 text-3xl text-center font-semibold uppercase tracking-wide">
+        <h3 className="mb-4 text-3xl text-center font-semibold uppercase tracking-wide">
           Emprendimientos
         </h3>
         <div className="flex justify-center">
@@ -33,9 +35,9 @@ function Emprendimientos() {
               />
             ))}
           </div>
-        </div> */}
+        </div>
 
-        <h3 className="mt-8 text-3xl text-center font-semibold uppercase tracking-wide">
+        {/* <h3 className="mt-8 text-3xl text-center font-semibold uppercase tracking-wide">
           Obras finalizadas y entregadas
         </h3>
         <div className="flex justify-center">
@@ -45,7 +47,7 @@ function Emprendimientos() {
               items={data.emprendimientosFinalizados}
             />
           </div>
-        </div>
+        </div> */}
         {/* Modal */}
         <MapModal
           address={{
@@ -56,6 +58,7 @@ function Emprendimientos() {
           isOpen={isOpen.open}
           closeModal={() => setIsOpen({ open: false, data: null })}
         />
+        <WhatsAppButton phoneNumber={data.contacto.whatsapp} />
       </div>
     )
   );

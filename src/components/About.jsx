@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from 'react-router-dom';
+
 function About({ images }) {
+  const navigate = useNavigate();
   return (
     <div className="md:container mx-auto px-4 py-24">
       <div className="flex flex-wrap -mx-2">
-        <div className="w-full md:w-1/2 px-2">
+        <div className="font-gotham-medium w-full md:w-1/2 px-2">
           <h2 className="text-3xl font-bold uppercase tracking-wide mb-4">
             ACERCA DE <span className="text-red-500">NOSOTROS</span>
           </h2>
@@ -33,12 +36,14 @@ function About({ images }) {
             trayectoria y rutina de trabajo.
           </p>
           <button
+            onClick={() => navigate('/emprendimientos')}
             type="button"
             className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-4 mr-2 rounded"
           >
             Ver emprendimientos
           </button>
           <button
+            onClick={() => navigate('/nosotros')}
             type="button"
             className="text-blue-500 hover:text-blue-700 py-2 px-4 rounded"
           >

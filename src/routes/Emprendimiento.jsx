@@ -19,18 +19,6 @@ function Emprendimiento() {
       .then((res) => setData(res));
   }, []);
 
-  const images = [
-    'https://via.placeholder.com/1200x800.png?text=Image+1',
-    'https://via.placeholder.com/1200x800.png?text=Image+2',
-    'https://via.placeholder.com/1200x800.png?text=Image+3',
-    'https://via.placeholder.com/1200x800.png?text=Image+4',
-    'https://via.placeholder.com/1200x800.png?text=Image+5',
-    'https://via.placeholder.com/1200x800.png?text=Image+6',
-    'https://via.placeholder.com/1200x800.png?text=Image+7',
-    'https://via.placeholder.com/1200x800.png?text=Image+8',
-    'https://via.placeholder.com/1200x800.png?text=Image+9',
-  ];
-
   return (
     data &&
     !!dataEmprendimiento && (
@@ -86,7 +74,7 @@ function Emprendimiento() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>{dataEmprendimiento.content}</span>
+                <span>Info general</span>
               </button>
               <button
                 type="button"
@@ -122,7 +110,7 @@ function Emprendimiento() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>{dataEmprendimiento.location}</span>
+                <span>Ubicación</span>
               </button>
             </div>
           </div>
@@ -141,8 +129,8 @@ function Emprendimiento() {
           <Map
             address={{
               name: 'La Plata, Buenos Aires',
-              lat: -34.921451,
-              lng: -57.954529,
+              lat: dataEmprendimiento.latitude,
+              lng: dataEmprendimiento.longitude,
             }}
           />
         </section>

@@ -1,5 +1,5 @@
-function WhatsAppButton() {
-  const phoneNumber = '1234567890'; // Reemplaza con el número de teléfono que desees
+/* eslint-disable react/prop-types */
+function WhatsAppButton({ phoneNumber }) {
   const message = encodeURIComponent(
     'Hola, me gustaría obtener más información.'
   ); // Reemplaza con el mensaje que quieras enviar
