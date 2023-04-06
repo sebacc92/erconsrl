@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import About from './components/About';
 import Carousel from './components/Carousel';
 
@@ -6,24 +7,41 @@ import Contacto from './routes/Contacto';
 import Testimonios from './components/Testimonios';
 import Emprendimientos from './components/Emprendimientos';
 import Objetivo from './components/Objetivo';
+import WhatsAppButton from './components/WhatsAppButton';
+import FacebookChat from './components/FacebookChat';
 
 function Home() {
+  const [data, setData] = useState(null);
+  console.log('data', data);
+  useEffect(() => {
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((res) => setData(res));
+  }, []);
   return (
-    <div>
-      <Carousel />
+    data && (
+      <div>
+        <Carousel items={data.carousel} />
 
-      <About />
+        <About images={data.acercaDeNosotros.images} />
 
-      <Emprendimientos />
+        <Emprendimientos items={data.emprendimientos} />
 
-      <Objetivo />
+        <Objetivo
+          titulo={data.nuestroObjetivo.titulo}
+          descripcion={data.nuestroObjetivo.descripcion}
+        />
 
-      <Proveedores />
+        <Proveedores items={data.proveedores} />
 
-      <Testimonios />
+        <Testimonios items={data.testimonios} />
 
-      <Contacto />
-    </div>
+        {/* <FacebookChat /> */}
+        <Contacto />
+
+        <WhatsAppButton />
+      </div>
+    )
   );
 }
 

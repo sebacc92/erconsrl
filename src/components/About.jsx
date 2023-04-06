@@ -1,10 +1,6 @@
-import image1 from '../assets/emprendimientos/experience-image-1.jpg';
-import image2 from '../assets/emprendimientos/experience-image-2.jpg';
-import image3 from '../assets/emprendimientos/experience-image-3.jpg';
-import image4 from '../assets/emprendimientos/experience-image-4.jpg';
-import image5 from '../assets/emprendimientos/experience-image-5.jpg';
+/* eslint-disable react/prop-types */
 
-function About() {
+function About({ images }) {
   return (
     <div className="md:container mx-auto px-4 py-24">
       <div className="flex flex-wrap -mx-2">
@@ -52,29 +48,29 @@ function About() {
         <div className="w-full md:w-1/2 px-2 mt-8 md:mt-0">
           <div className="grid grid-cols-3 gap-2">
             <img
-              src={image1}
+              src={images[0]}
               alt="Imagen 1"
               className="w-full h-56 object-cover"
             />
             <img
-              src={image2}
+              src={images[1]}
               alt="Imagen 2"
               className="w-full h-56 object-cover"
             />
             <img
-              src={image3}
+              src={images[2]}
               alt="Imagen 3"
               className="w-full h-56 object-cover"
             />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <img
-              src={image4}
+              src={images[3]}
               alt="Imagen 4"
               className="w-full h-56 object-cover col-span-1"
             />
             <img
-              src={image5}
+              src={images[4]}
               alt="Imagen 5"
               className="w-full h-56 object-cover col-span-2"
             />

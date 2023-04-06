@@ -1,0 +1,348 @@
+{
+    "carousel": [
+      {
+        "original": "/src/assets/carousel/hall.webp",
+        "fullscreen": "imagen1",
+        "title": "Torre Ecológica Solar",
+        "descriptionCard": "Edificio innovador con paneles solares y diseño sostenible.",
+        "buttonLink": "Departamento de lujo en Puerto Madero"
+      },
+      {
+        "original": "/src/assets/carousel/interior1.webp",
+        "fullscreen": "imagen2",
+        "title": "Conjunto Residencial Boreal",
+        "descriptionCard": "Viviendas modernas y confortables en una ubicación privilegiada.",
+        "buttonLink": "Casa en la playa"
+      },
+      {
+        "original": " /src/assets/carousel/interior2.webp",
+        "fullscreen": "imagen3",
+        "title": "Centro Empresarial Andino",
+        "descriptionCard": "Espacios de oficinas flexibles y adaptados a las nuevas necesidades laborales.",
+        "buttonLink": "Oficina en el centro"
+      }
+    ],
+    "acercaDeNosotros": {
+      "images": [
+        "/src/assets/emprendimientos/experience-image-1.jpg",
+        "/src/assets/emprendimientos/experience-image-2.jpg",
+        "/src/assets/emprendimientos/experience-image-3.jpg",
+        "/src/assets/emprendimientos/experience-image-4.jpg",
+        "/src/assets/emprendimientos/experience-image-5.jpg"
+      ]
+    },
+    "emprendimientos": [
+      {
+        "title": "Departamento de lujo en Puerto Madero",
+        "location": "Alicia Moreau de Justo 1000",
+        "categoria": "En pozo",
+        "content": "Amplio departamento de 3 ambientes en el exclusivo barrio de Puerto Madero, con vista al río y amenities de primer nivel. Perfecto para aquellos que buscan vivir en una de las zonas más lujosas de la ciudad.",
+        "images": ["/src/assets/emprendimientos/experience-image-1.jpg", "/src/assets/carousel/departamento2.webp", "/src/assets/carousel/departamento3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.609795",
+        "longitude": "-58.364785"
+      },
+      {
+        "title": "Casa en la playa",
+        "location": "Av. del Mar 100",
+        "categoria": "En construcción",
+        "content": "Hermosa casa de estilo mediterráneo en la playa de Mar del Plata, con amplio jardín y piscina. Perfecto para aquellos que buscan disfrutar del sol y el mar en un entorno tranquilo y relajado.",
+        "images": ["/src/assets/emprendimientos/experience-image-2.jpg", "/src/assets/carousel/playa2.webp", "/src/assets/carousel/playa3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-38.002495",
+        "longitude": "-57.548525"
+      },
+      {
+        "title": "Oficina en el centro",
+        "location": "Florida 100",
+        "categoria": "En construcción",
+        "content": "Amplia oficina de 4 ambientes en el corazón del centro porteño, con excelente iluminación natural y vista panorámica de la ciudad. Perfecto para aquellos que buscan un espacio de trabajo cómodo y funcional.",
+        "images": ["/src/assets/emprendimientos/experience-image-3.jpg", "/src/assets/carousel/oficina2.webp", "/src/assets/carousel/oficina3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.603722",
+        "longitude": "-58.382744"
+      },
+      {
+        "title": "Departamento a estrenar en Palermo",
+        "location": "Av. Santa Fe 2000",
+        "categoria": "En construcción",
+        "content": "Moderno departamento de 2 ambientes en el corazón de Palermo, a estrenar. Diseñado con materiales de primera calidad y terminaciones de lujo, este departamento ofrece una experiencia única de confort y estilo.",
+        "images": ["/src/assets/emprendimientos/experience-image-4.jpg", "/src/assets/carousel/palermo2.webp", "/src/assets/carousel/palermo3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.586479",
+        "longitude": "-58.421348"
+      },
+      {
+        "title": "Casa en la montaña",
+        "location": "Calle San Martín 500",
+        "categoria": "En construcción",
+        "content": "Acogedora casa de campo en las sierras de Córdoba, rodeada de naturaleza y aire puro. Con amplio jardín y quincho, esta propiedad es perfecta para aquellos que buscan escapar de la ciudad y disfrutar de la tranquilidad de la montaña.",
+        "images": ["/src/assets/emprendimientos/experience-image-5.jpg", "/src/assets/carousel/montana2.webp", "/src/assets/carousel/montana3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-31.440032",
+        "longitude": "-64.189720"
+      },
+      {
+        "title": "Departamento en el barrio de Belgrano",
+        "location": "Av. Cabildo 1500",
+        "categoria": "En construcción",
+        "content": "Cómodo departamento de 3 ambientes en el barrio de Belgrano, cerca de todos los servicios y medios de transporte. Con amplios espacios y excelente iluminación natural, este departamento es ideal para familias o parejas que buscan vivir en una de las zonas más tradicionales de la ciudad.",
+        "images": ["/src/assets/emprendimientos/experience-image-6.jpg", "/src/assets/carousel/belgrano2.webp", "/src/assets/carousel/belgrano3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.562737",
+        "longitude": "-58.457123"
+      }
+      
+    ],
+    "emprendimientosFinalizados": [
+      {
+        "title": "Local comercial en Recoleta",
+        "location": "Av. Santa Fe 3000",
+        "categoria": "Finalizada",
+        "content": "Amplio local comercial en una de las zonas más exclusivas de la ciudad, con excelente vidriera y gran tránsito peatonal y vehicular. Perfecto para aquellos que buscan establecer su negocio en un lugar estratégico y de alto perfil.",
+        "images": ["/src/assets/carousel/recoleta1.webp", "/src/assets/carousel/recoleta2.webp", "/src/assets/carousel/recoleta3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.589964",
+        "longitude": "-58.398927"
+      },
+      {
+        "title": "Casa en el delta del Paraná",
+        "location": "Río Sarmiento 100",
+        "categoria": "Finalizada",
+        "content": "Encantadora casa de campo en el delta del Paraná, con acceso directo al río y muelle propio. Con amplios espacios verdes y todas las comodidades, esta propiedad es ideal para aquellos que buscan un lugar de descanso y contacto con la naturaleza.",
+        "images": ["/src/assets/carousel/delta1.webp", "/src/assets/carousel/delta2.webp", "/src/assets/carousel/delta3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-33.832620",
+        "longitude": "-59.059330"
+      },
+      {
+        "title": "Departamento en San Telmo",
+        "location": "Defensa 500",
+        "categoria": "Finalizada",
+        "content": "Moderno departamento de 2 ambientes enel pintoresco barrio de San Telmo, con balcón al frente y vista panorámica de la ciudad. Equipado con todas las comodidades y detalles de calidad, este departamento es perfecto para aquellos que buscan vivir en un lugar con historia y encanto.",
+        "images": ["/src/assets/carousel/santelmo1.webp", "/src/assets/carousel/santelmo2.webp", "/src/assets/carousel/santelmo3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.624486",
+        "longitude": "-58.371529"
+      },
+      {
+        "title": "Departamento en Caballito",
+        "location": "Av. Rivadavia 4000",
+        "categoria": "Finalizada",
+        "content": "Moderno departamento de 3 ambientes en el barrio de Caballito, a estrenar. Con excelente distribución y acabados de primera calidad, este departamento es perfecto para aquellos que buscan un hogar cómodo y funcional en una zona con todos los servicios y medios de transporte.",
+        "images": ["/src/assets/carousel/caballito1.webp", "/src/assets/carousel/caballito2.webp", "/src/assets/carousel/caballito3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.613392",
+        "longitude": "-58.444327"
+      },
+      {
+        "title": "Casa en el bosque",
+        "location": "Ruta 40 km 30",
+        "categoria": "Finalizada",
+        "content": "Encantadora casa de campo en el bosque, rodeada de árboles y aire puro. Con amplios ventanales y decoración rústica, esta propiedad es perfecta para aquellos que buscan un lugar de descanso y conexión con la naturaleza.",
+        "images": ["/src/assets/carousel/bosque1.webp", "/src/assets/carousel/bosque2.webp", "/src/assets/carousel/bosque3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-41.072068",
+        "longitude": "-71.527001"
+      },
+      {
+        "title": "Departamento en Recoleta",
+        "location": "Av. Callao 200",
+        "categoria": "Finalizada",
+        "content": "Amplio departamento de 4 ambientes en el exclusivo barrio de Recoleta, con excelente iluminación natural y acabados de lujo. Con vista panorámica de la ciudad y amenities de primer nivel, este departamento es perfecto para aquellos que buscan vivir en un lugar de prestigio y elegancia.",
+        "images": ["/src/assets/carousel/recoleta1.webp", "/src/assets/carousel/recoleta2.webp", "/src/assets/carousel/recoleta3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.595254",
+        "longitude": "-58.397207"
+      },
+      {
+        "title": "Oficina en Puerto Madero",
+        "location": "Juana Manso 400",
+        "categoria": "Finalizada",
+        "content": "Moderna oficina de 2 ambientesen el distrito de negocios de Puerto Madero, con vista al río y excelente conectividad. Equipada con todas las comodidades y tecnología de vanguardia, esta oficina es perfecta para aquellos que buscan un espacio de trabajo de primer nivel.",
+        "images": ["/src/assets/carousel/puertomadero1.webp", "/src/assets/carousel/puertomadero2.webp", "/src/assets/carousel/puertomadero3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.616034",
+        "longitude": "-58.362342"
+      },
+      {
+        "title": "Casa en la costa",
+        "location": "Calle 7 y playa",
+        "categoria": "Finalizada",
+        "content": "Encantadora casa de playa en la costa atlántica, con amplio jardín y acceso directo a la playa. Con todas las comodidades y detalles de calidad, esta propiedad es perfecta para aquellos que buscan disfrutar del sol, el mar y la naturaleza en un entorno tranquilo y relajado.",
+        "images": ["/src/assets/carousel/costa1.webp", "/src/assets/carousel/costa2.webp", "/src/assets/carousel/costa3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-38.984235",
+        "longitude": "-58.287547"
+      },
+      {
+        "title": "Departamento en Palermo Hollywood",
+        "location": "Av. Juan B. Justo 2000",
+        "categoria": "Finalizada",
+        "content": "Moderno departamento de 2 ambientes en el vibrante barrio de Palermo Hollywood, con amplio balcón y vista abierta. Equipado con todas las comodidades y detalles de diseño, este departamento es ideal para aquellos que buscan vivir en un lugar moderno y cosmopolita.",
+        "images": ["/src/assets/carousel/hollywood1.webp", "/src/assets/carousel/hollywood2.webp", "/src/assets/carousel/hollywood3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.587027",
+        "longitude": "-58.439574"
+      },
+      {
+        "title": "Local comercial en Palermo Soho",
+        "location": "Honduras 5000",
+        "categoria": "Finalizada",
+        "content": "Amplio local comercial en el corazón de Palermo Soho, con excelente vidriera y estilo moderno. Con gran tránsito peatonal y cercanía a los principales puntos de interés del barrio, este local es ideal para aquellos que buscan establecer su negocio en una zona de alta demanda.",
+        "images": ["/src/assets/carousel/soho1.webp", "/src/assets/carousel/soho2.webp", "/src/assets/carousel/soho3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.593693",
+        "longitude": "-58.425360"
+      },
+      {
+        "title": "Casa quinta en Pilar",
+        "location": "Ruta 8 km 50",
+        "categoria": "Finalizada",
+        "content": "Hermosa casa quinta en el partido de Pilar, con amplio parque y piscina. Con todas las comodidades y detalles de calidad, esta propiedad es perfecta para aquellos que buscan un lugar de descanso y contacto con la naturaleza, sin alejarse demasiado de la ciudad.",
+        "images": ["/src/assets/carousel/pilar1.webp", "/src/assets/carousel/pilar2.webp", "/src/assets/carousel/pilar3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.437178",
+        "longitude": "-58.881405"
+      },
+      {
+        "title": "Departamento en Nuñez",
+        "location": "Av. Libertador 8000",
+        "categoria": "Finalizada",
+        "content": "Cómodo departamento de 3 ambientes en el barrio de Nuñez, con balcón al frente y vista panorámica del río. Equipado con todas las comodidades y cercano a los principales medios de transporte, este departamento es ideal para familias o parejas que buscan vivir en una zona tranquila y con mucho verde.",
+        "images": ["/src/assets/carousel/nunez1.webp", "/src/assets/carousel/nunez2.webp", "/src/assets/carousel/nunez3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.554269",
+        "longitude": "-58.464569"
+      },
+      {
+        "title": "Oficina en Microcentro",
+        "location": "Av. Corrientes 1200",
+        "categoria": "Finalizada",
+        "content": "Cómoda oficina en pleno Microcentro, con amplias ventanas y excelente iluminación natural. Equipada con todas las comodidades y cercana a los principales medios de transporte, esta oficina es perfecta para aquellos que buscan un espacio de trabajo funcional y bien ubicado.",
+        "images": ["/src/assets/carousel/microcentro1.webp", "/src/assets/carousel/microcentro2.webp", "/src/assets/carousel/microcentro3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-34.603453",
+        "longitude": "-58.382623"
+      },
+      {
+        "title": "Casa en la montaña",
+        "location": "Calle 5 y Cerro Bayo",
+        "categoria": "Finalizada",
+        "content": "Encantadora casa de campo en la base del Cerro Bayo, rodeada de montañas y aire puro. Con amplios espacios verdes y todas las comodidades, esta propiedad es perfecta para aquellos que buscan un lugar de descanso y contacto con la naturaleza, sin alejarse demasiado de la ciudad.",
+        "images": ["/src/assets/carousel/montana1.webp", "/src/assets/carousel/montana2.webp", "/src/assets/carousel/montana3.webp"],
+        "video": "https://youtube.com",
+        "pdf": "https://www.google.com",
+        "latitude": "-40.760744",
+        "longitude": "-71.666535"
+      }
+    ],
+    "nuestroObjetivo": {
+      "titulo": "NUESTRO OBJETIVO",
+      "descripcion": "El objetivo de equipo es desarrollar la creatividad de proyectos y la excelencia en la construcción de obras propias y de terceros que respalden el crecimiento con la experiencia de nuestros profesionales."
+    },
+    "testimonios": [
+      {
+        "nombre": "María Rodríguez",
+        "content": "Estoy muy satisfecha con el servicio que me han proporcionado. Me han ayudado a resolver un problema complejo en poco tiempo y siempre se mostraron muy amables y profesionales. Los recomiendo ampliamente.",
+        "image": "/src/assets/testimonios/maria.webp"
+      },
+      {
+        "nombre": "Juan García",
+        "content": "Quiero expresar mi agradecimiento a todo el equipo por su excelente trabajo. Desde el primer momento mostraron un gran compromiso con mi proyecto y me guiaron en todo momento. El resultado final superó mis expectativas. ¡Gracias!",
+        "image": "/src/assets/testimonios/juan.webp"
+      },
+      {
+        "nombre": "Laura González",
+        "content": "No puedo estar más contenta con el servicio que he recibido. Me han asesorado de manera clara y sencilla y han resuelto todas mis dudas. Además, el resultado final ha sido espectacular. Sin duda, volveré a trabajar con ellos.",
+        "image": "/src/assets/testimonios/laura.webp"
+      },
+      {
+        "nombre": "Carlos Pérez",
+        "content": "Quiero destacar la profesionalidad y la eficiencia del equipo. Me han ayudado en un proyecto muy importante y han logrado superar todas mis expectativas. Siempre han estado disponibles y han respondido a mis preguntas de manera rápida y eficaz. ¡Un trabajo excepcional!",
+        "image": "/src/assets/testimonios/carlos.webp"
+      },
+      {
+        "nombre": "Ana Martínez",
+        "content": "Estoy muy satisfecha con el trabajo que han realizado. Han sido muy pacientes y han trabajado en estrecha colaboración conmigo para asegurarse de que el resultado final fuera exactamente lo que buscaba. Además, el proceso ha sido muy fluido y han cumplido con los plazos establecidos.",
+        "image": "/src/assets/testimonios/ana.webp"
+      }
+    ],
+    "proveedores": [
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/1.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/2.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/3.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/4.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/5.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/6.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/7.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/8.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/9.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/10.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/11.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/12.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/13.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/14.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/15.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/16.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/17.jpg"
+      },
+      {
+        "image": "https://www.erconsrl.com.ar/images/prov/18.jpg"
+      }
+    ]
+  
+  }
+  

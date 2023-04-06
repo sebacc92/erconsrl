@@ -7,13 +7,16 @@ function Emprendimiento() {
   const params = useParams();
   console.log('params', params);
 
-  const [dataEmprendimiento, setDataEmprendimiento] = useState(null);
-  console.log('dataEmprendimiento', dataEmprendimiento);
+  const [data, setData] = useState(null);
+
+  const dataEmprendimiento = data?.emprendimientos.find(
+    (e) => e.title === params.title
+  );
 
   useEffect(() => {
-    fetch(`http://api.erconsrl.com.ar/emprendimientos/${params.title}`)
+    fetch('/data.json')
       .then((response) => response.json())
-      .then((data) => setDataEmprendimiento(data));
+      .then((res) => setData(res));
   }, []);
 
   const images = [
@@ -29,6 +32,7 @@ function Emprendimiento() {
   ];
 
   return (
+    data &&
     !!dataEmprendimiento && (
       <div>
         <div className="relative mx-auto">

@@ -1,14 +1,7 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react/prop-types */
 import Card from './Card';
 
-function Obras() {
-  const [emprendimientos, setEmprendimientos] = useState([]);
-  console.log('emprendimientos', emprendimientos);
-  useEffect(() => {
-    fetch('http://api.erconsrl.com.ar/emprendimientos')
-      .then((response) => response.json())
-      .then((data) => setEmprendimientos(data));
-  }, []);
+function Emprendimientos({ items }) {
   return (
     <div className="nuestros-emprendimientos p-16 bg-gray-800">
       <div className="mx-2 sm:mx-4 mt-8 text-white">
@@ -17,13 +10,13 @@ function Obras() {
         </h3>
         <div className="flex justify-center">
           <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {emprendimientos.map((emprendimiento) => (
+            {items.map((item) => (
               <Card
-                description={emprendimiento.description}
-                images={emprendimiento.images}
-                location={emprendimiento.location}
-                categoria={emprendimiento.categoria}
-                title={emprendimiento.title}
+                description={item.description}
+                images={item.images}
+                location={item.location}
+                categoria={item.categoria}
+                title={item.title}
               />
             ))}
           </div>
@@ -33,4 +26,4 @@ function Obras() {
   );
 }
 
-export default Obras;
+export default Emprendimientos;
