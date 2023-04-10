@@ -1,51 +1,36 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 
 import { useNavigate } from 'react-router-dom';
 
-function About({ images }) {
+function About({ images, parrafos }) {
   const navigate = useNavigate();
   return (
     <div className="md:container mx-auto px-4 py-24">
       <div className="flex flex-wrap -mx-2">
         <div className="font-gotham-medium w-full md:w-1/2 px-2">
           <h2 className="text-3xl font-bold uppercase tracking-wide mb-4">
-            ACERCA DE <span className="text-red-500">NOSOTROS</span>
+            ACERCA DE <span className="text-[#990000]">NOSOTROS</span>
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            Somos una empresa constructora joven que nace en noviembre de 2004
-            con el aporte de profesionales de vasta experiencia en el campo de
-            la construcción y arquitectura. En este tiempo de vida hemos
-            desarrollado proyectos y ejecuciones de obra de arquitectura que nos
-            incentiva a crecer con el impulso de la actividad pública y privada.
-          </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            El objetivo de equipo es desarrollar la creatividad de proyectos y
-            la excelencia en la construcción de obras propias y de terceros que
-            respalden el crecimiento con la experiencia de nuestros
-            profesionales.
-          </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            En la actividad privada nos enorgullece comunicar que en este breve
-            camino transitado ya hemos realizado y finalizado hasta la
-            actualidad 18 unidades de edificios multifamiliares.
-          </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            En la actividad pública hemos participado y ganado licitaciones con
-            entes provinciales (U.E.P), municipales (M.L.P) y privados
-            (Federación Patronal Seguros), que respaldan nuestra seriedad,
-            trayectoria y rutina de trabajo.
-          </p>
+          {parrafos.map(({ texto }, index) => (
+            <p
+              className="text-gray-600 leading-relaxed mb-4"
+              key={`p-${index}`}
+            >
+              {texto}
+            </p>
+          ))}
           <button
             onClick={() => navigate('/emprendimientos')}
             type="button"
-            className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-4 mr-2 rounded"
+            className="border border-[#990000] text-[#990000] hover:bg-[#990000] hover:text-white py-2 px-4 mr-2 rounded"
           >
             Ver emprendimientos
           </button>
           <button
             onClick={() => navigate('/nosotros')}
             type="button"
-            className="text-blue-500 hover:text-blue-700 py-2 px-4 rounded"
+            className="text-[#990000] hover:underline py-2 px-4 rounded"
           >
             Conocer mas
           </button>

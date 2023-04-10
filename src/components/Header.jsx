@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const toggleSubmenu = () => {
+    setSubmenuOpen(!submenuOpen);
+  };
   return (
     <header className="fixed top-0 lg:top-10 w-full z-[10] h-12 sm:h-16">
       <nav
@@ -10,9 +14,13 @@ function Header() {
       >
         {/* <!-- Logo --> */}
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <Link className="text-xl text-black" to="/">
-            <img className="h-12 sm:h-16" src={logo} alt="Mi Logo" />
-          </Link>
+          <NavLink className="text-xl text-black" to="/">
+            <img
+              className="h-12 sm:h-16"
+              src="/assets/logo.png"
+              alt="Logo Ercon"
+            />
+          </NavLink>
         </div>
 
         {/* <!-- Menú desplegable (mobile) --> */}
@@ -39,30 +47,83 @@ function Header() {
           data-te-collapse-item
         >
           <div className="text-sm">
-            <Link
-              className="block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white border-b border-b-gray-400 lg:border-0 hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase"
+            <NavLink
+              className={({ isActive }) =>
+                `block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase ${
+                  isActive ? 'lg:underline' : ''
+                } custom-underline`
+              }
+              aria-current="page"
+              to="/"
+              data-te-nav-link-ref
+            >
+              Inicio
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase ${
+                  isActive ? 'lg:underline' : ''
+                } custom-underline`
+              }
               aria-current="page"
               to="/nosotros"
               data-te-nav-link-ref
             >
               Nosotros
-            </Link>
-            <Link
-              className="block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white border-b border-b-gray-400 lg:border-0 hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase"
-              aria-current="page"
-              to="/emprendimientos"
-              data-te-nav-link-ref
-            >
-              Emprendimientos
-            </Link>
-            <Link
-              className="block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white border-b border-b-gray-400 lg:border-0 hover:text-gray-200 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase"
+            </NavLink>
+            <div className="relative inline-block">
+              <button
+                type="button"
+                onClick={toggleSubmenu}
+                className="block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase"
+                aria-current="page"
+                data-te-nav-link-ref
+              >
+                Emprendimientos
+              </button>
+              {submenuOpen && (
+                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="py-1">
+                    <NavLink
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      to="/emprendimientos/finalizadas"
+                    >
+                      Finalizadas
+                    </NavLink>
+                    <NavLink
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      to="/emprendimientos/trabajando"
+                    >
+                      Trabajando
+                    </NavLink>
+                    <NavLink
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      to="/emprendimientos/proyectos"
+                    >
+                      Proyectos
+                    </NavLink>
+                    <NavLink
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      to="/emprendimientos/inversion"
+                    >
+                      Inversion
+                    </NavLink>
+                  </div>
+                </div>
+              )}
+            </div>
+            <NavLink
+              className={({ isActive }) =>
+                `block mt-4 lg:inline-block lg:mt-0 text-black lg:text-white hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase ${
+                  isActive ? 'lg:underline' : ''
+                } custom-underline`
+              }
               aria-current="page"
               to="/contacto"
               data-te-nav-link-ref
             >
               Contacto
-            </Link>
+            </NavLink>
           </div>
         </div>
       </nav>

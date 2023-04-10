@@ -8,7 +8,6 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import CustomDescription from './CustomDescription';
 
 function MyGallery({ items }) {
-  console.log('items', items);
   const breakpoint = useBreakpoint();
   const navigate = useNavigate();
 
@@ -28,16 +27,18 @@ function MyGallery({ items }) {
   );
 
   return (
-    <ImageGallery
-      items={items}
-      renderItem={renderCustomSlide}
-      showThumbnails={false}
-      showPlayButton={false}
-      showBullets={breakpoint !== 'xs'}
-      autoPlay
-      bulletClass="image-gallery-image"
-      onSlide={(index) => setCurrentIndex(index)}
-    />
+    <div id="test2">
+      <ImageGallery
+        items={items}
+        renderItem={renderCustomSlide}
+        showThumbnails={false}
+        showPlayButton={false}
+        showBullets={breakpoint !== 'xs'}
+        autoPlay
+        bulletClass="image-gallery-image"
+        onSlide={(index) => setCurrentIndex(index)}
+      />
+    </div>
   );
 }
 

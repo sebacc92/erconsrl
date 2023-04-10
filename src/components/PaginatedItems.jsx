@@ -29,7 +29,7 @@ function PaginatedItems({ itemsPerPage, items }) {
           images={item.images}
           location={item.location}
           categoria={item.categoria}
-          title={item.title}
+          titulo={item.titulo}
         />
       ))}
       <ReactPaginate

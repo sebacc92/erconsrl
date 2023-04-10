@@ -1,32 +1,51 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-underscore-dangle */
 import { useEffect, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Map from '../components/Map';
 import WhatsAppButton from '../components/WhatsAppButton';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 function Contacto() {
   const [data, setData] = useState(null);
+  const [recaptchaInstance, setRecaptchaInstance] = useState(null);
+  const [isVisibleAlertSuccess, setIsVisibleAlertSuccess] = useState(false);
+
   useEffect(() => {
     fetch('/data.json')
       .then((response) => response.json())
       .then((res) => setData(res));
   }, []);
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    // try {
-    //   // const form = event.target;
-    //   // const formData = new FormData(form);
-    //   // const _data = Object.fromEntries(formData);
 
-    //   // const response = await fetch('http://api.erconsrl.com.ar/send-email', {
-    //   //   method: 'POST',
-    //   //   headers: {
-    //   //     'Content-Type': 'application/json',
-    //   //   },
-    //   //   body: JSON.stringify(_data),
-    //   // });
-    // } catch (err) {}
+  const handleRecaptcha = async (event) => {
+    const recaptchaValue = await recaptchaInstance.executeAsync();
+    if (recaptchaValue) {
+      try {
+        const form = event.target;
+        const formData = new FormData(form);
+        const _data = Object.fromEntries(formData);
+        await fetch('https://api.erconsrl.com.ar/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(_data),
+        });
+      } catch (err) {
+        console.log('err', err);
+      }
+      setIsVisibleAlertSuccess(true);
+      // Realiza la operación deseada con los datos del formulario
+    } else {
+      alert('Por favor complete la verificacion de reCAPTCHA');
+    }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRecaptcha(e);
+  };
+
   return (
     data && (
       <>
@@ -154,9 +173,22 @@ function Contacto() {
                 </div>
               </div>
               <div className="mt-10">
+                <ReCAPTCHA
+                  ref={(ref) => setRecaptchaInstance(ref)}
+                  sitekey="6LfNb24lAAAAAMGvvjJoEKnX2G8fQSd_CBFFcioX"
+                  size="invisible"
+                />
+              </div>
+              {isVisibleAlertSuccess && (
+                <span className="text-green-700">
+                  El mensaje ha sido enviado
+                </span>
+              )}
+              <div className="mt-10">
                 <button
+                  className="block w-full rounded-md bg-[#990000] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#8A0000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  id="submit-btn"
                   type="submit"
-                  className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Enviar
                 </button>

@@ -16,7 +16,7 @@ function Emprendimientos({ items }) {
                 images={item.images}
                 location={item.location}
                 categoria={item.categoria}
-                title={item.title}
+                titulo={item.titulo}
               />
             ))}
           </div>

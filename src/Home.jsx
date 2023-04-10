@@ -8,10 +8,10 @@ import Testimonios from './components/Testimonios';
 import Emprendimientos from './components/Emprendimientos';
 import Objetivo from './components/Objetivo';
 import WhatsAppButton from './components/WhatsAppButton';
+import HorizontalSlider from './components/HorizontalSlider';
 
 function Home() {
   const [data, setData] = useState(null);
-  console.log('data', data);
   useEffect(() => {
     fetch('/data.json')
       .then((response) => response.json())
@@ -22,9 +22,12 @@ function Home() {
       <div>
         <Carousel items={data.carousel} />
 
-        <About images={data.acercaDeNosotros.images} />
+        <About
+          images={data.acercaDeNosotros.images}
+          parrafos={data.acercaDeNosotros.parrafos}
+        />
 
-        <Emprendimientos items={data.emprendimientos} />
+        <Emprendimientos items={data.emprendimientos.slice(0, 3)} />
 
         <Objetivo
           titulo={data.nuestroObjetivo.titulo}

@@ -24,7 +24,23 @@ const router = createBrowserRouter([
         element: <Emprendimientos />,
       },
       {
-        path: '/emprendimientos/:title',
+        path: '/emprendimientos/trabajando',
+        element: <Emprendimientos selectedTab={0} />,
+      },
+      {
+        path: '/emprendimientos/proyectos',
+        element: <Emprendimientos selectedTab={1} />,
+      },
+      {
+        path: '/emprendimientos/inversion',
+        element: <Emprendimientos selectedTab={2} />,
+      },
+      {
+        path: '/emprendimientos/finalizadas',
+        element: <Emprendimientos selectedTab={3} />,
+      },
+      {
+        path: '/emprendimientos/:titulo',
         element: <Emprendimiento />,
       },
       {

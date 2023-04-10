@@ -12,17 +12,23 @@
     "format": "prettier --write src/**/*.{js,jsx}"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "iconv-lite": "0.6.3",
     "leaflet": "1.9.3",
     "react": "18.2.0",
     "react-awesome-testimonials": "^1.0.2",
     "react-dom": "18.2.0",
+    "react-google-recaptcha": "^2.1.0",
     "react-image-gallery": "^1.2.11",
     "react-leaflet": "4.2.1",
     "react-modal": "3.16.1",
     "react-paginate": "^8.1.5",
     "react-router-dom": "6.10.0",
+    "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
+    "react-youtube": "^10.1.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

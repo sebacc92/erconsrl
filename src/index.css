@@ -240,10 +240,10 @@ font-style: italic;
     transform: rotate(-45deg);
 }
 
-.nuestros-emprendimientos {
-
-}
-
 .image-gallery-image {
     object-fit: cover !important;
+}
+
+.custom-underline {
+    text-underline-offset: 10px; /* Ajusta este valor para controlar el espacio entre el subrayado y el texto */
 }

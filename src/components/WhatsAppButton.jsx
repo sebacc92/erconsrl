@@ -11,7 +11,7 @@ function WhatsAppButton({ phoneNumber }) {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-md hover:bg-green-600 transition-colors duration-200 z-40"
+      className="fixed bottom-4 left-4 bg-green-500 text-white p-4 rounded-full shadow-md hover:bg-green-600 transition-colors duration-200 z-40"
     >
       <i className="fab fa-whatsapp fa-2x" />
     </a>

@@ -19,18 +19,21 @@ function Nosotros() {
             <div className="relative h-max">
               <img
                 className="block relative w-full max-w-full h-auto"
-                src="https://via.placeholder.com/800x400.png"
+                src={data.nosotros.imagenPrincipal}
                 alt=""
               />
               <div className="absolute inset-0 bg-black opacity-25" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <h2 className="text-white text-3xl font-bold text-center">
-                  Título centrado en la imagen
+                  {data.nosotros.titulo}
                 </h2>
               </div>
             </div>
             <div className="flex justify-center">
-              <About images={data.acercaDeNosotros.images} />
+              <About
+                images={data.acercaDeNosotros.images}
+                parrafos={data.acercaDeNosotros.parrafos}
+              />
             </div>
           </div>
         </div>

@@ -1,17 +1,37 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Gallery from '../components/Gallery';
+import ImageGallery from 'react-image-gallery';
+import YouTube from 'react-youtube';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link, animateScroll as scroll } from 'react-scroll';
+import {
+  faCircleInfo,
+  faCirclePlay,
+  faImage,
+  faLocationDot,
+} from '@fortawesome/free-solid-svg-icons';
 import Map from '../components/Map';
+import 'react-image-gallery/styles/css/image-gallery.css';
+
+const videoOptions = {
+  height: '390',
+  width: '640',
+  playerVars: {
+    autoplay: 0, // 1 para reproducción automática, 0 para no
+    // Aquí puedes agregar más opciones según la documentación de la API de YouTube IFrame Player:
+    // https://developers.google.com/youtube/player_parameters
+  },
+};
 
 function Emprendimiento() {
   const params = useParams();
-  console.log('params', params);
 
   const [data, setData] = useState(null);
 
   const dataEmprendimiento = data?.emprendimientos.find(
-    (e) => e.title === params.title
+    (e) => e.titulo === params.titulo
   );
+  console.log('dataEmprendimiento', dataEmprendimiento);
 
   useEffect(() => {
     fetch('/data.json')
@@ -25,7 +45,7 @@ function Emprendimiento() {
       <div>
         <div className="relative mx-auto">
           <img
-            src={dataEmprendimiento.images[0]}
+            src={dataEmprendimiento.images.main}
             alt="Descripción de la imagen"
             className="w-full h-[550px] object-cover"
           />
@@ -44,7 +64,7 @@ function Emprendimiento() {
                   </span>
                   <h1 className="text-white text-7xl font-bold uppercase">
                     <span className="text-7xl font-bold uppercase">
-                      {dataEmprendimiento.title}
+                      {dataEmprendimiento.titulo}
                     </span>
                     <small className="text-2xl font-light">
                       {dataEmprendimiento.location}
@@ -58,79 +78,114 @@ function Emprendimiento() {
         <section className="product menu bg-white shadow-md sticky top-90 z-99 py-4 px-0 block">
           <div className="container">
             <div className="row flex justify-center mx-(-15)">
-              <button
-                type="button"
-                className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
+              <Link
+                activeClass="active"
+                to="infoGeneral"
+                spy
+                smooth
+                offset={-70}
+                duration={300}
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                <button
+                  type="button"
+                  className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
                 >
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                  <path
-                    fillRule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0a10 10 0 11-20 0 10 10 0 0120 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Info general</span>
-              </button>
-              <button
-                type="button"
-                className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
+                  <FontAwesomeIcon icon={faCircleInfo} />
+                  <span className="ml-2">Info general</span>
+                </button>
+              </Link>
+              <Link
+                activeClass="active"
+                to="imagenes"
+                spy
+                smooth
+                offset={-70}
+                duration={300}
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                <button
+                  type="button"
+                  className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
                 >
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                  <path
-                    fillRule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0a10 10 0 11-20 0 10 10 0 0120 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Imágenes</span>
-              </button>
-              <button
-                type="button"
-                className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
+                  <FontAwesomeIcon icon={faImage} />
+                  <span className="ml-2">Imágenes</span>
+                </button>
+              </Link>
+              <Link
+                activeClass="active"
+                to="video"
+                spy
+                smooth
+                offset={-70}
+                duration={300}
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                <button
+                  type="button"
+                  className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
                 >
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                  <path
-                    fillRule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm2 0a10 10 0 11-20 0 10 10 0 0120 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Ubicación</span>
-              </button>
+                  <FontAwesomeIcon icon={faCirclePlay} />
+                  <span className="ml-2">Video</span>
+                </button>
+              </Link>
+              <Link
+                activeClass="active"
+                to="ubicacion"
+                spy
+                smooth
+                offset={-70}
+                duration={300}
+              >
+                <button
+                  type="button"
+                  className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
+                >
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <span className="ml-2">Ubicación</span>
+                </button>
+              </Link>
             </div>
           </div>
         </section>
-        <section className="bg-gray-200 p-8">
-          <div className="m-8">
-            <div className="detail-body bg-white p-8 mx-auto max-w-7xl">
-              {dataEmprendimiento.content}
-            </div>
+        <section className="bg-gray-200 p-8" id="infoGeneral">
+          <div className="container bg-white mx-auto px-4 py-1 rounded-lg border border-gray-700">
+            <h1 className="text-4xl font-bold text-[#990000] my-8">
+              {dataEmprendimiento.info.titulo}
+            </h1>
+            <h2 className="text-2xl font-semibold text-[#B80000] mb-4">
+              {dataEmprendimiento.info.subtitulo}
+            </h2>
+            {dataEmprendimiento.info.descripcion.map((p) => (
+              <p className="text-lg font-normal text-gray-700 mb-4">{p}</p>
+            ))}
           </div>
         </section>
-        <section className="gallery-images">
-          <Gallery images={dataEmprendimiento.images} />
+        <section
+          className="gallery-images mx-auto max-w-7xl sm:p-8 md:p-12 lg:p-16 xl:p-20"
+          id="imagenes"
+        >
+          <ImageGallery
+            items={dataEmprendimiento.images.gallery}
+            showThumbnails
+            showPlayButton={false}
+            showBullets={false}
+            autoPlay={false}
+            bulletClass="image-gallery-image"
+          />
         </section>
-        <section className="map w-full my-8">
+        <section className="mx-auto max-w-2xl" id="video">
+          <YouTube
+            videoId={dataEmprendimiento.videoYoutubeId}
+            opts={videoOptions}
+          />
+        </section>
+        <section
+          className="map my-8 mx-auto max-w-[#1600] sm:p-8 md:p-12 lg:p-16 xl:p-20"
+          id="ubicacion"
+        >
           <Map
             address={{
               name: 'La Plata, Buenos Aires',
-              lat: dataEmprendimiento.latitude,
-              lng: dataEmprendimiento.longitude,
+              lat: dataEmprendimiento.ubicacion.latitude,
+              lng: dataEmprendimiento.ubicacion.longitude,
             }}
           />
         </section>
