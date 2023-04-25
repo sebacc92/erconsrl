@@ -78,7 +78,7 @@
           ]
         },
         "videoYoutubeId": "SMonEKA27uo",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.609795",
           "longitude": "-58.364785"
@@ -124,7 +124,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-38.002495",
           "longitude": "-57.548525"
@@ -170,7 +170,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.603722",
           "longitude": "-58.382744"
@@ -217,7 +217,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.586479",
           "longitude": "-58.421348"
@@ -263,7 +263,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-31.440032",
           "longitude": "-64.189720"
@@ -309,7 +309,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.562737",
           "longitude": "-58.457123"
@@ -354,7 +354,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.589964",
           "longitude": "-58.398927"
@@ -400,7 +400,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-33.832620",
           "longitude": "-59.059330"
@@ -447,7 +447,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.624486",
           "longitude": "-58.371529"
@@ -493,7 +493,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion" : {
           "latitude": "-34.613392",
           "longitude": "-58.444327"
@@ -539,7 +539,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion" :{
           "latitude": "-41.072068",
           "longitude": "-71.527001"
@@ -584,7 +584,7 @@
             }
           ]
         },        "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.595254",
           "longitude": "-58.397207"
@@ -629,7 +629,7 @@
             }
           ]
         },        "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.616034",
           "longitude": "-58.362342"
@@ -674,7 +674,7 @@
           ]
         },
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "latitude": "-38.984235",
         "longitude": "-58.287547"
       },
@@ -717,7 +717,7 @@
             }
           ]
         },        "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.587027",
           "longitude": "-58.439574"
@@ -739,7 +739,7 @@
         },
         "images": ["/assets/carousel/soho1.webp", "/assets/carousel/soho2.webp", "/assets/carousel/soho3.webp"],
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "latitude": "-34.593693",
         "longitude": "-58.425360"
       },
@@ -782,7 +782,7 @@
             }
           ]
         },        "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.437178",
           "longitude": "-58.881405"
@@ -804,7 +804,7 @@
         },
         "images": ["/assets/carousel/nunez1.webp", "/assets/carousel/nunez2.webp", "/assets/carousel/nunez3.webp"],
         "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-34.554269",
           "longitude": "-58.464569"
@@ -849,7 +849,7 @@
             }
           ]
         },        "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion" : {
           "latitude": "-34.603453",
           "longitude": "-58.382623"
@@ -894,7 +894,7 @@
             }
           ]
         },        "video": "https://youtube.com",
-        "pdf": "https://www.google.com",
+        "pdf": "/assets/pdf/cartel-obra-48.pdf",
         "ubicacion": {
           "latitude": "-40.760744",
           "longitude": "-71.666535"
@@ -909,27 +909,27 @@
       {
         "nombre": "María Rodríguez",
         "content": "Estoy muy satisfecha con el servicio que me han proporcionado. Me han ayudado a resolver un problema complejo en poco tiempo y siempre se mostraron muy amables y profesionales. Los recomiendo ampliamente.",
-        "image": "/assets/testimonios/maria.webp"
+        "image": "/assets/testimonios/person1.jpg"
       },
       {
         "nombre": "Juan García",
         "content": "Quiero expresar mi agradecimiento a todo el equipo por su excelente trabajo. Desde el primer momento mostraron un gran compromiso con mi proyecto y me guiaron en todo momento. El resultado final superó mis expectativas. ¡Gracias!",
-        "image": "/assets/testimonios/juan.webp"
+        "image": "/assets/testimonios/person2.jpg"
       },
       {
         "nombre": "Laura González",
         "content": "No puedo estar más contenta con el servicio que he recibido. Me han asesorado de manera clara y sencilla y han resuelto todas mis dudas. Además, el resultado final ha sido espectacular. Sin duda, volveré a trabajar con ellos.",
-        "image": "/assets/testimonios/laura.webp"
+        "image": "/assets/testimonios/person3.jpg"
       },
       {
         "nombre": "Carlos Pérez",
         "content": "Quiero destacar la profesionalidad y la eficiencia del equipo. Me han ayudado en un proyecto muy importante y han logrado superar todas mis expectativas. Siempre han estado disponibles y han respondido a mis preguntas de manera rápida y eficaz. ¡Un trabajo excepcional!",
-        "image": "/assets/testimonios/carlos.webp"
+        "image": "/assets/testimonios/person4.jpg"
       },
       {
         "nombre": "Ana Martínez",
         "content": "Estoy muy satisfecha con el trabajo que han realizado. Han sido muy pacientes y han trabajado en estrecha colaboración conmigo para asegurarse de que el resultado final fuera exactamente lo que buscaba. Además, el proceso ha sido muy fluido y han cumplido con los plazos establecidos.",
-        "image": "/assets/testimonios/ana.webp"
+        "image": "/assets/testimonios/person5.jpg"
       }
     ],
     "proveedores": [

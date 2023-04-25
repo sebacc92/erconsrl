@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import About from './components/About';
-import Carousel from './components/Carousel';
+import About from '../components/About';
+import Carousel from '../components/Carousel';
 
-import Proveedores from './components/Proveedores';
-import Contacto from './routes/Contacto';
-import Testimonios from './components/Testimonios';
-import Emprendimientos from './components/Emprendimientos';
-import Objetivo from './components/Objetivo';
-import WhatsAppButton from './components/WhatsAppButton';
-import HorizontalSlider from './components/HorizontalSlider';
+import Proveedores from '../components/Proveedores';
+import Contacto from './Contacto';
+import Testimonios from '../components/Testimonios';
+import Emprendimientos from '../components/Emprendimientos';
+import Objetivo from '../components/Objetivo';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 function Home() {
   const [data, setData] = useState(null);

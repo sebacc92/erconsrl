@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/no-extraneous-dependencies */
 import { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import { useNavigate } from 'react-router-dom';
@@ -16,25 +14,27 @@ function MyGallery({ items }) {
   const renderCustomSlide = (item) => (
     <div key={item.original} className="relative">
       <img src={item.original} alt="" className="w-full h-full object-cover" />
-      <CustomDescription
-        description={items[currentIndex].descriptionCard}
-        title={items[currentIndex].title}
-        onClick={() =>
-          navigate(`/emprendimientos/${items[currentIndex].title}`)
-        }
-      />
+      {breakpoint !== 'xs' && (
+        <CustomDescription
+          description={items[currentIndex].descriptionCard}
+          title={items[currentIndex].title}
+          onClick={() =>
+            navigate(`/emprendimientos/${items[currentIndex].title}`)
+          }
+        />
+      )}
     </div>
   );
 
   return (
-    <div id="test2">
+    <div className="mt-[7rem] lg:mt-[2.5rem] overflow-hidden">
       <ImageGallery
         items={items}
         renderItem={renderCustomSlide}
         showThumbnails={false}
         showPlayButton={false}
         showBullets={breakpoint !== 'xs'}
-        autoPlay
+        // autoPlay
         bulletClass="image-gallery-image"
         onSlide={(index) => setCurrentIndex(index)}
       />

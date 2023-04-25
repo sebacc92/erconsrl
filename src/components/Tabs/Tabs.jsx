@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
 function Tabs({ tabs, selectedTab }) {
@@ -9,15 +8,15 @@ function Tabs({ tabs, selectedTab }) {
   return (
     <div className="w-full">
       <div className="border-b border-gray-200">
-        <nav className="flex space-x-4">
+        <nav className="flex bg-gray-600">
           {tabs.map((tab) => (
             <button
               type="button"
               key={tab.id}
-              className={`text-lg ${
+              className={`text-lg p-4 ${
                 activeTab.id === tab.id
-                  ? 'border-b-2 border-blue-500 text-blue-500'
-                  : 'text-gray-500'
+                  ? 'border-b-2 border-blue-500 text-white bg-gray-500'
+                  : 'text-white'
               }`}
               onClick={() => setActiveTab(tab)}
             >
@@ -26,9 +25,7 @@ function Tabs({ tabs, selectedTab }) {
           ))}
         </nav>
       </div>
-      <div className="p-4">
-        <p>{activeTab.content}</p>
-      </div>
+      <div className="mx-auto p-4">{activeTab.content}</div>
     </div>
   );
 }

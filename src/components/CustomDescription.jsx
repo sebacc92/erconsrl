@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 function CustomDescription({ description, onClick, titulo }) {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+    <div className="absolute top-[20%] sm:top-[25%] md:top-[30%] lg:top-[35%] xl:top-[25%] 2xl:top-[15%] w-full max-h-[80%] flex items-center justify-center p-4 mt-[4rem]">
       <div className="bg-black bg-opacity-50 p-4 text-white opacity-80 rounded-md">
         <h2 className="font-gotham-bold font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text5xl">
           {titulo}

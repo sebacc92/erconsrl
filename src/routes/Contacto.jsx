@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-underscore-dangle */
 import { useEffect, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -49,8 +48,8 @@ function Contacto() {
   return (
     data && (
       <>
-        <div className="isolate bg-gray-100 py-8 px-6 sm:py-32 lg:px-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-2">
-          <section className="mx-auto max-w-4xl md:max-w-sm">
+        <div className="isolate bg-gray-100 py-8 px-4 sm:py-32 lg:px-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-2 mt-[7rem]">
+          <section className="">
             <Map
               address={{
                 name: 'Ercon Srl',
@@ -58,20 +57,24 @@ function Contacto() {
                 lng: -57.9721757,
               }}
             />
-            <div className="container mx-auto mt-2">
-              <div className="grid grid-flow-row grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-4 lg:flex lg:flex-row lg:justify-between">
-                <div className="mb-4 lg:mb-0">
-                  <p className="font-bold">Dirección:</p>
-                  <p>123 Main St.</p>
+            <div className="mx-auto mt-2">
+              <div className="flex flex-col sm:flex-row justify-between">
+                <div className="mb-4 lg:mb-0 font-gotham-bold">
+                  <p className="font-gotham-narrow-ultra underline">
+                    Dirección:
+                  </p>
+                  <p className="font-gotham-medium">123 Main St.</p>
                 </div>
                 <div className="mb-4 lg:mb-0">
-                  <p className="font-bold">Teléfono:</p>
-                  <p>(123) 456-7890</p>
+                  <p className="font-gotham-narrow-ultra underline">
+                    Teléfono:
+                  </p>
+                  <p className="font-gotham-medium">(123) 456-7890</p>
                 </div>
                 <div>
-                  <p className="font-bold">Emails:</p>
-                  <p>info@ejemplo.com</p>
-                  <p className="mt-2">ventas@ejemplo.com</p>
+                  <p className="font-gotham-narrow-ultra underline">Emails:</p>
+                  <p className="font-gotham-medium">info@ejemplo.com</p>
+                  <p className="font-gotham-medium mt-2">ventas@ejemplo.com</p>
                 </div>
               </div>
             </div>
@@ -151,7 +154,7 @@ function Contacto() {
                       name="phoneNumber"
                       id="phoneNumber"
                       autoComplete="tel"
-                      className="block w-full rounded-md border-0 py-2 px-3.5 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>

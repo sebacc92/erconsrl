@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Card from './Card';

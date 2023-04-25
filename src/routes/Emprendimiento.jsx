@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import YouTube from 'react-youtube';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import {
   faCircleInfo,
   faCirclePlay,
@@ -34,6 +34,7 @@ function Emprendimiento() {
   console.log('dataEmprendimiento', dataEmprendimiento);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch('/data.json')
       .then((response) => response.json())
       .then((res) => setData(res));
@@ -42,7 +43,7 @@ function Emprendimiento() {
   return (
     data &&
     !!dataEmprendimiento && (
-      <div>
+      <div className="mt-[7rem]">
         <div className="relative mx-auto">
           <img
             src={dataEmprendimiento.images.main}
@@ -75,9 +76,9 @@ function Emprendimiento() {
             </div>
           </div>
         </div>
-        <section className="product menu bg-white shadow-md sticky top-90 z-99 py-4 px-0 block">
+        <section className="bg-white shadow-md sticky top-90 z-99 py-4 px-0 block">
           <div className="container">
-            <div className="row flex justify-center mx-(-15)">
+            <div className="flex flex-wrap justify-center mx-(-15) gap-2">
               <Link
                 activeClass="active"
                 to="infoGeneral"
@@ -142,10 +143,18 @@ function Emprendimiento() {
                   <span className="ml-2">Ubicación</span>
                 </button>
               </Link>
+              <a href={dataEmprendimiento.pdf} download>
+                <button
+                  className="mr-2 border border-gray-300 text-gray-500 px-4 py-2 rounded flex items-center hover:border-blue-500 hover:text-blue-500"
+                  type="button"
+                >
+                  Brochure
+                </button>
+              </a>
             </div>
           </div>
         </section>
-        <section className="bg-gray-200 p-8" id="infoGeneral">
+        <section className="  -200 p-8" id="infoGeneral">
           <div className="container bg-white mx-auto px-4 py-1 rounded-lg border border-gray-700">
             <h1 className="text-4xl font-bold text-[#990000] my-8">
               {dataEmprendimiento.info.titulo}
@@ -159,19 +168,23 @@ function Emprendimiento() {
           </div>
         </section>
         <section
-          className="gallery-images mx-auto max-w-7xl sm:p-8 md:p-12 lg:p-16 xl:p-20"
+          className="gallery-images p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 bg-gray-300"
           id="imagenes"
         >
-          <ImageGallery
-            items={dataEmprendimiento.images.gallery}
-            showThumbnails
-            showPlayButton={false}
-            showBullets={false}
-            autoPlay={false}
-            bulletClass="image-gallery-image"
-          />
+          <h2 className="text-center font-bold text-3xl mb-2">Imágenes</h2>
+          <div className="max-w-7xl mx-auto">
+            <ImageGallery
+              items={dataEmprendimiento.images.gallery}
+              showThumbnails
+              showPlayButton={false}
+              showBullets={false}
+              autoPlay={false}
+              bulletClass="image-gallery-image"
+            />
+          </div>
         </section>
-        <section className="mx-auto max-w-2xl" id="video">
+        <section className="mx-auto max-w-2xl mt-8" id="video">
+          <h2 className="text-center font-bold text-3xl mb-2">Video</h2>
           <YouTube
             videoId={dataEmprendimiento.videoYoutubeId}
             opts={videoOptions}
@@ -181,6 +194,7 @@ function Emprendimiento() {
           className="map my-8 mx-auto max-w-[#1600] sm:p-8 md:p-12 lg:p-16 xl:p-20"
           id="ubicacion"
         >
+          <h2 className="text-center font-bold text-3xl mb-2">Ubicación</h2>
           <Map
             address={{
               name: 'La Plata, Buenos Aires',

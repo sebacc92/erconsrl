@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -13,8 +12,9 @@ function TestimoniosSlider({ items }) {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 10000,
     arrows: true,
+    rtl: true,
     cssEase: 'linear',
     responsive: [
       {
@@ -37,7 +37,7 @@ function TestimoniosSlider({ items }) {
     <div className="max-w-6xl mx-auto px-4 py-16">
       <Slider {...settings}>
         {items.map((item, index) => (
-          <div key={`testimonio-${index}`}>
+          <div key={`testimonio-${index}`} className="px-2">
             <div className="mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="px-4 py-3">
                 <div className="flex items-center justify-center">

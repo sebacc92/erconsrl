@@ -1,12 +1,11 @@
 /* eslint-disable react/no-array-index-key */
-/* eslint-disable react/prop-types */
 
 import { useNavigate } from 'react-router-dom';
 
 function About({ images, parrafos }) {
   const navigate = useNavigate();
   return (
-    <div className="md:container mx-auto px-4 py-24">
+    <div className="md:container mx-auto px-4 py-24" id="nosotros">
       <div className="flex flex-wrap -mx-2">
         <div className="font-gotham-medium w-full md:w-1/2 px-2">
           <h2 className="text-3xl font-bold uppercase tracking-wide mb-4">

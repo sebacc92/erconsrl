@@ -1,15 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/no-extraneous-dependencies */
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
 import MapModal from '../components/MapModal';
-import PaginatedItems from '../components/PaginatedItems';
 import WhatsAppButton from '../components/WhatsAppButton';
-import Card from '../components/Card';
 import Tabs from '../components/Tabs/Tabs';
+import PaginatedList from '../components/PaginetedList';
 
 function Emprendimientos({ selectedTab }) {
-  const params = useParams();
+  console.log('selectedTab', selectedTab);
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState(null);
 
@@ -19,88 +15,68 @@ function Emprendimientos({ selectedTab }) {
       .then((res) => setData(res));
   }, []);
 
+  useEffect(() => {
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((res) => setData(res));
+  }, []);
+
+  const itemsEmprendimientosFinalizados = data
+    ? data.emprendimientos.filter((item) => item.categoria === 'Finalizada')
+    : [];
+
+  const itemsEmprendimientosInversion = data
+    ? data.emprendimientos.filter((item) => item.categoria === 'Inversión')
+    : [];
+
+  const itemsEmprendimientosProyectos = data
+    ? data.emprendimientos.filter((item) => item.categoria === 'Proyecto')
+    : [];
+
+  const itemsEmprendimientosTrabajando = data
+    ? data.emprendimientos.filter((item) => item.categoria === 'Trabajando')
+    : [];
+
   const tabs = data && [
     {
       id: 'tab1',
       title: 'Trabajando',
       content: (
-        <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {data.emprendimientos
-            .filter((item) => item.categoria === 'Trabajando')
-            .map((item) => (
-              <Card
-                description={item.description}
-                images={item.images}
-                location={item.location}
-                categoria={item.categoria}
-                titulo={item.titulo}
-              />
-            ))}
-        </div>
+        <PaginatedList
+          itemsPerPage={6}
+          items={itemsEmprendimientosTrabajando}
+        />
       ),
     },
     {
       id: 'tab2',
       title: 'Proyectos',
       content: (
-        <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {data.emprendimientos
-            .filter((item) => item.categoria === 'Proyectos')
-            .map((item) => (
-              <Card
-                description={item.description}
-                images={item.images}
-                location={item.location}
-                categoria={item.categoria}
-                titulo={item.titulo}
-              />
-            ))}
-        </div>
+        <PaginatedList itemsPerPage={6} items={itemsEmprendimientosProyectos} />
       ),
     },
     {
       id: 'tab3',
       title: 'Inversión',
       content: (
-        <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {data.emprendimientos
-            .filter((item) => item.categoria === 'Inversión')
-            .map((item) => (
-              <Card
-                description={item.description}
-                images={item.images}
-                location={item.location}
-                categoria={item.categoria}
-                titulo={item.titulo}
-              />
-            ))}
-        </div>
+        <PaginatedList itemsPerPage={6} items={itemsEmprendimientosInversion} />
       ),
     },
     {
       id: 'tab4',
       title: 'Finalizadas',
       content: (
-        <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {data.emprendimientos
-            .filter((item) => item.categoria === 'Finalizada')
-            .map((item) => (
-              <Card
-                description={item.description}
-                images={item.images}
-                location={item.location}
-                categoria={item.categoria}
-                titulo={item.titulo}
-              />
-            ))}
-        </div>
+        <PaginatedList
+          itemsPerPage={6}
+          items={itemsEmprendimientosFinalizados}
+        />
       ),
     },
   ];
 
   return (
     data && (
-      <div className="mx-2 sm:mx-4 mt-20 lg:mt-28">
+      <div className="mx-2 sm:mx-4 md:mx-auto mt-20 lg:mt-28 lg:max-w-7xl">
         <h3 className="mb-4 text-3xl text-center font-semibold uppercase tracking-wide">
           Emprendimientos
         </h3>

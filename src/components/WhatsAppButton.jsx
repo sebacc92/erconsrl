@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 function WhatsAppButton({ phoneNumber }) {
   const message = encodeURIComponent(
     'Hola, me gustaría obtener más información.'

@@ -240,10 +240,24 @@ font-style: italic;
     transform: rotate(-45deg);
 }
 
-.image-gallery-image {
-    object-fit: cover !important;
+/* Ajusta el alto de los slides al 80% del alto del viewport */
+.image-gallery-slides {
+    max-height: 80vh;
+}
+
+/* Ajusta el alto del contenedor de las imágenes al 80% del alto del viewport */
+.react-image-gallery .image-gallery-slide .image-gallery-image {
+    max-height: 80vh;
+}
+
+/* Ajusta el alto de las imágenes al 100% del contenedor */
+.react-image-gallery .image-gallery-image {
+    height: 100%;
+    object-fit: contain; /* Para mantener las proporciones de la imagen */
 }
 
 .custom-underline {
     text-underline-offset: 10px; /* Ajusta este valor para controlar el espacio entre el subrayado y el texto */
 }
+
+.scale-up-vertical-top{animation:scale-up-vertical-top 0.4s linear} @keyframes scale-up-vertical-top{0%{transform:scaleY(.4);transform-origin:center top}100%{transform:scaleY(1);transform-origin:center top}}

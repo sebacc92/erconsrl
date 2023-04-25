@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import bgImage from '../assets/carousel/hall.webp';
 
 function ParallaxSection({ children }) {
   return (
     <div
-      className="flex items-center justify-center mb-12 py-40 bg-fixed bg-center bg-cover"
+      className="flex items-center justify-center mb-12 py-20 bg-fixed bg-center bg-cover"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}

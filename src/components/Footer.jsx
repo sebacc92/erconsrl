@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="bg-neutral-900 text-center text-white">
       <div className="container px-6 pt-6 mx-auto">
-        <div className="mb-6 flex justify-center flex-col sm:flex-row sm:flex-wrap">
+        <div className="mb-6 flex justify-center flex-row">
           <a
             href="https://www.facebook.com/ErconSrl/"
             type="button"

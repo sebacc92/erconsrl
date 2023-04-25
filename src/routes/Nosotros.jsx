@@ -1,11 +1,9 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import About from '../components/About';
 import WhatsAppButton from '../components/WhatsAppButton';
 
 function Nosotros() {
   const [data, setData] = useState(null);
-  console.log('data 2', data);
   useEffect(() => {
     fetch('/data.json')
       .then((response) => response.json())

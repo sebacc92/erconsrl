@@ -1,15 +1,14 @@
-/* eslint-disable react/prop-types */
 import Card from './Card';
 
 function Emprendimientos({ items }) {
   return (
-    <div className="nuestros-emprendimientos p-16 bg-gray-800">
-      <div className="mx-2 sm:mx-4 mt-8 text-white">
-        <h3 className="mb-4 text-3xl text-center font-semibold uppercase tracking-wide">
+    <div className="nuestros-emprendimientos px-2 py-16 bg-gray-200">
+      <div className="sm:mx-4 mt-8">
+        <h3 className="mb-4 text-3xl text-center text-black font-semibold uppercase tracking-wide font-gotham-narrow-bold">
           Nuestros Emprendimientos
         </h3>
         <div className="flex justify-center">
-          <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid justify-items-center align-items-center gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-3">
             {items.map((item) => (
               <Card
                 description={item.description}

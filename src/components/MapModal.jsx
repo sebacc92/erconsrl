@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/no-extraneous-dependencies */
 import Modal from 'react-modal';
 import Map from './Map';
 
