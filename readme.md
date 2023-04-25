@@ -1,6 +1,16 @@
 ## Requisitos
 Antes de comenzar con este proyecto, es necesario tener instalado Node.js en su computadora. Puede descargar la versión más reciente de Node.js desde su sitio web oficial [https://nodejs.org/es/.](https://nodejs.org/es/).
 
+Para saber si tenes instalado Node.js podes usar el comando
+```javascript
+node -v
+```
+## Clonacion del proyecto
+Podes descargar un ZIP o
+Si tenes git instalado podes clonar el repositorio con el comando:
+```javascript
+git clone https://github.com/sebacc92/erconsrl.git
+```
 ## Instalación de dependencias
 Una vez que Node.js esté instalado, debe instalar las dependencias del proyecto utilizando el siguiente comando en la terminal:
 
@@ -25,7 +35,3 @@ npm run build
 ```
 
 Este comando generará archivos optimizados y listos para su implementación en un servidor. Los archivos resultantes se encontrarán en la carpeta /dist.
-
-## Licencia
-Este proyecto se distribuye bajo la licencia MIT. Para más información, consulte el archivo LICENSE en este repositorio.
-
