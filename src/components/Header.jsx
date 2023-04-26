@@ -37,7 +37,7 @@ function Header() {
         <div className="flex justify-between items-center flex-shrink-0 mr-6">
           {/* <!-- Logo --> */}
           <NavLink className="text-xl text-black" to="/">
-            <img className="h-24" src="/assets/logo.png" alt="Logo Ercon" />
+            <img className="h-24" src="/assets/logo.png" alt="Logo Ercon 2" />
           </NavLink>
           {/* <!-- Menú desplegable (mobile) --> */}
           <div className="block lg:hidden">
