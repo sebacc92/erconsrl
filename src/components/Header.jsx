@@ -82,7 +82,7 @@ function Header() {
               />
             </svg>
 
-            <span className="text-sm font-medium py-2 px-4">Inicio</span>
+            <span className="text-lg font-medium py-2 px-4">Inicio</span>
           </NavLink>
 
           <NavLink
@@ -228,7 +228,7 @@ function Header() {
             <img className="h-24" src="/assets/logo.png" alt="Logo Ercon" />
           </NavLink>
         </div>
-        <div className="text-sm">
+        <div className="text-lg">
           <NavLink
             className={({ isActive }) =>
               `block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase ${

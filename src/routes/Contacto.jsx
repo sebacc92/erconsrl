@@ -52,29 +52,29 @@ function Contacto() {
           <section className="">
             <Map
               address={{
-                name: 'Ercon Srl',
-                lat: -34.9278454,
-                lng: -57.9721757,
+                name: 'Ercon Srl', 
+                lat: -34.92760794112915,
+                lng: -57.97297121872619,
               }}
             />
             <div className="mx-auto mt-2">
               <div className="flex flex-col sm:flex-row justify-between">
-                <div className="mb-4 lg:mb-0 font-gotham-bold">
-                  <p className="font-gotham-narrow-ultra underline">
+                <div className="mb-4 lg:mb-0 font-gotham">
+                  <p className="font-gotham-narrow-bold">
                     Dirección:
                   </p>
-                  <p className="font-gotham-medium">123 Main St.</p>
+                  <p className="text-2xl font-gotham-regular text-[#990000]">Diagonal 95, #48, La Plata</p>
                 </div>
                 <div className="mb-4 lg:mb-0">
-                  <p className="font-gotham-narrow-ultra underline">
+                  <p className="font-gotham-narrow-bold">
                     Teléfono:
                   </p>
-                  <p className="font-gotham-medium">(123) 456-7890</p>
+                  <p className="text-2xl font-gotham-regular text-[#990000]">(221) 414 0756 / 414 2782</p>
                 </div>
                 <div>
-                  <p className="font-gotham-narrow-ultra underline">Emails:</p>
-                  <p className="font-gotham-medium">info@ejemplo.com</p>
-                  <p className="font-gotham-medium mt-2">ventas@ejemplo.com</p>
+                  <p className="font-gotham-narrow-bold ">Emails:</p>
+                  <p className="text-2xl font-gotham-regular text-[#990000]">info@erconsrl.com.ar</p>
+                  <p className="text-2xl font-gotham-regular text-[#990000]">ventas@erconsrl.com.ar</p>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ function Contacto() {
                 Formulario de contacto
               </h2>
               <p className="mt-2 text-lg leading-8 text-gray-600">
-                Dejános tus datos y un asesor se comunicará a la brevedad
+                Hola! Completa el formulario con tus datos y a la brevedad nos comunicaremos. Muchas Gracias
               </p>
             </div>
             <form className="mx-auto mt-8 max-w-xl" onSubmit={handleSubmit}>
@@ -163,7 +163,7 @@ function Contacto() {
                     htmlFor="message"
                     className="block text-sm font-semibold leading-6 text-gray-900"
                   >
-                    Message
+                    Mensaje
                   </label>
                   <div className="mt-2.5">
                     <textarea
@@ -189,11 +189,11 @@ function Contacto() {
               )}
               <div className="mt-10">
                 <button
-                  className="block w-full rounded-md bg-[#990000] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#8A0000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="block w-full rounded-md bg-[#990000] px-3.5 py-2.5 text-center text-lg text-white shadow-sm hover:bg-[#8A0000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   id="submit-btn"
                   type="submit"
                 >
-                  Enviar
+                  Enviar Consulta
                 </button>
               </div>
             </form>
