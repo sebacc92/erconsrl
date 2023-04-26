@@ -9,7 +9,7 @@ function About({ images, parrafos }) {
       <div className="flex flex-wrap -mx-2">
         <div className="font-gotham-medium w-full md:w-1/2 px-2">
           <h2 className="text-3xl font-bold uppercase tracking-wide mb-4">
-            ACERCA DE <span className="text-[#990000]">NOSOTROS</span>
+            ACERCA DE <span className="text-[#990000]">ERCON</span>
           </h2>
           {parrafos.map(({ texto }, index) => (
             <p
