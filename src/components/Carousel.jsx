@@ -12,22 +12,24 @@ function MyGallery({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderCustomSlide = (item) => (
-    <div key={item.original} className="relative">
-      <img src={item.original} alt="" className="w-full h-full object-cover" />
-      {breakpoint !== 'xs' && (
-        <CustomDescription
-          description={items[currentIndex].descriptionCard}
-          title={items[currentIndex].title}
-          onClick={() =>
-            navigate(`/emprendimientos/${items[currentIndex].title}`)
-          }
-        />
-      )}
+    <div key={item.original} className="relative border-2 border-red-600">
+      <img
+        src={item.original}
+        alt="Imagen del slide"
+        className="w-full h-full object-cover"
+      />
+      <CustomDescription
+        description={items[currentIndex].descriptionCard}
+        title={items[currentIndex].title}
+        onClick={() =>
+          navigate(`/emprendimientos/${items[currentIndex].title}`)
+        }
+      />
     </div>
   );
 
   return (
-    <div className="mt-[7rem] lg:mt-[2.5rem] overflow-hidden">
+    <div className="relative mt-[7rem] lg:mt-[2.5rem]">
       <ImageGallery
         items={items}
         renderItem={renderCustomSlide}

@@ -1,12 +1,12 @@
 // eslint-disable-next-line react/prop-types
-function CustomDescription({ description, onClick, titulo }) {
+function CustomDescription({ description, onClick, title }) {
   return (
-    <div className="absolute top-[20%] sm:top-[25%] md:top-[30%] lg:top-[35%] xl:top-[25%] 2xl:top-[15%] w-full max-h-[80%] flex items-center justify-center p-4 mt-[4rem]">
-      <div className="bg-black bg-opacity-50 p-4 text-white opacity-80 rounded-md">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-h-[80%] flex items-center justify-center">
+      <div className="bg-black bg-opacity-50 p-4 text-white opacity-80 rounded-md max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
         <h2 className="font-gotham-bold font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text5xl">
-          {titulo}
+          {title}
         </h2>
-        <p className="font-gotham-narrow-medium mb-4 text-center text-base sm:text-lg md:text-xl">
+        <p className="font-gotham-narrow-medium mb-4 text-center text-base sm:text-lg md:text-xl whitespace-normal overflow-wrap break-word">
           {description}
         </p>
         <button
@@ -20,5 +20,4 @@ function CustomDescription({ description, onClick, titulo }) {
     </div>
   );
 }
-
 export default CustomDescription;
