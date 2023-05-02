@@ -40,7 +40,7 @@ function Header() {
             <img className="h-24" src="/assets/logo.png" alt="Logo Ercon 2" />
           </NavLink>
           {/* <!-- Menú desplegable (mobile) --> */}
-          <div className="block lg:hidden">
+          <div className="block lg:hidden mr-4">
             <button
               className="flex justify-center items-center button-menu"
               type="button"
