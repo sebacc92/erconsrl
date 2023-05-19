@@ -11,7 +11,7 @@ import Objetivo from '../components/Objetivo';
 import WhatsAppButton from '../components/WhatsAppButton';
 
 function Home() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [items, setItems] = useState(null);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -43,6 +43,9 @@ function Home() {
         setItems(list);
       });
   }, []);
+
+  const emprendimientosDestacados = data.filter((e) => e.attributes.destacado);
+
   return (
     data &&
     items && (
@@ -51,12 +54,9 @@ function Home() {
 
         <About />
 
-        <Emprendimientos items={data.emprendimientos.slice(0, 3)} />
+        <Emprendimientos items={emprendimientosDestacados} />
 
-        <Objetivo
-          titulo={data.nuestroObjetivo.titulo}
-          descripcion={data.nuestroObjetivo.descripcion}
-        />
+        <Objetivo />
 
         <Proveedores items={data.proveedores} />
 

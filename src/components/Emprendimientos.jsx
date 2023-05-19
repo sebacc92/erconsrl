@@ -1,6 +1,7 @@
 import Card from './Card';
 
 function Emprendimientos({ items }) {
+  console.log('items', items);
   return (
     <div className="nuestros-emprendimientos px-2 py-16 bg-gray-200">
       <div className="sm:mx-4 mt-8">
