@@ -1,16 +1,19 @@
 import { NavLink } from 'react-router-dom';
 
 function Card({ images, location, categoria, titulo }) {
+  console.log('images', images);
   return (
     <NavLink to={`/emprendimientos/${titulo}`}>
       <div className="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-white dark:bg-gray-800 dark:border-gray-700 transition-all hover:shadow-lg hover:shadow-gray-400 hover:-translate-y-2 hover:duration-400 cursor-pointer">
         <div className="relative">
-          <img
-            className="rounded-t-lg h-96"
-            src={images.main}
-            alt=""
-            height="380"
-          />
+          {images?.data?.[0].attributes.url && (
+            <img
+              className="rounded-t-lg h-96"
+              src={images.data[0].attributes.url}
+              alt=""
+              height="380"
+            />
+          )}
           <span
             className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white px-2 py-1 rounded-md border border-white ${
               categoria === 'En pozo' ? 'bg-[#990000]' : 'bg-[#aF0000]'

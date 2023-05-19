@@ -12,7 +12,7 @@ function MyGallery({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderCustomSlide = (item) => (
-    <div key={item.original} className="relative border-2 border-red-600">
+    <div key={item.original} className="relative">
       <img
         src={item.original}
         alt="Imagen del slide"

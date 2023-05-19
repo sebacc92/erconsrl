@@ -3,8 +3,29 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function TestimoniosSlider({ items }) {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://strapi-erconsrl.onrender.com/api/testimonios?populate=img'
+        );
+        console.log('response', response);
+
+        setData(response.data);
+      } catch (error) {
+        console.error('Error al obtener los datos: ', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -33,6 +54,7 @@ function TestimoniosSlider({ items }) {
       },
     ],
   };
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       <Slider {...settings}>

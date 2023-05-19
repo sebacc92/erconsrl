@@ -1,9 +1,42 @@
 /* eslint-disable react/no-array-index-key */
 
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import axios from 'axios';
 
-function About({ images, parrafos }) {
+function About() {
+  const [data, setData] = useState(null);
+  const images = [
+    '/assets/nosotros/experience-image-1.jpg',
+    '/assets/nosotros/experience-image-2.jpg',
+    '/assets/nosotros/experience-image-3.webp',
+    '/assets/nosotros/experience-image-4.webp',
+    '/assets/nosotros/experience-image-5.webp',
+  ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://strapi-erconsrl.onrender.com/api/acerca-de-nosotro'
+        );
+
+        setData(response.data);
+      } catch (error) {
+        console.error('Error al obtener los datos: ', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const navigate = useNavigate();
+  const contentWithBreaks = data?.data?.attributes?.content?.replace(
+    /\n/g,
+    '<br />'
+  );
+
   return (
     <div className="md:container mx-auto px-4 py-24" id="nosotros">
       <div className="flex flex-wrap -mx-2">
@@ -11,14 +44,14 @@ function About({ images, parrafos }) {
           <h2 className="text-3xl font-bold uppercase tracking-wide mb-4">
             ACERCA DE <span className="text-[#990000]">ERCON</span>
           </h2>
-          {parrafos.map(({ texto }, index) => (
-            <p
-              className="text-gray-600 leading-relaxed mb-4"
-              key={`p-${index}`}
-            >
-              {texto}
-            </p>
-          ))}
+          <div
+            className="text-gray-600 leading-relaxed mb-4"
+            dangerouslySetInnerHTML={{ __html: contentWithBreaks }}
+          />
+
+          {/* <p className="text-gray-600 leading-relaxed mb-4">
+            <ReactMarkdown>{contentWithBreaks}</ReactMarkdown>
+          </p> */}
           <button
             onClick={() => navigate('/emprendimientos')}
             type="button"
