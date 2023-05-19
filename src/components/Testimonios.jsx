@@ -3,28 +3,10 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useLoaderData } from 'react-router-dom';
 
-function TestimoniosSlider({ items }) {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://strapi-erconsrl.onrender.com/api/testimonios?populate=img'
-        );
-        console.log('response', response);
-
-        setData(response.data);
-      } catch (error) {
-        console.error('Error al obtener los datos: ', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+function TestimoniosSlider({ data }) {
+  console.log('data', data);
 
   const settings = {
     dots: true,
@@ -58,21 +40,21 @@ function TestimoniosSlider({ items }) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       <Slider {...settings}>
-        {items.map((item, index) => (
+        {data.map((item, index) => (
           <div key={`testimonio-${index}`} className="px-2">
             <div className="mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="px-4 py-3">
                 <div className="flex items-center justify-center">
                   <img
                     className="h-10 w-10 rounded-full mr-2"
-                    src={item.image}
-                    alt={item.nombre}
+                    src={item.attributes.imagen.data.attributes.url}
+                    alt={item.attributes.nombre}
                   />
                   <h2 className="text-gray-900 text-lg font-medium">
-                    {item.name}
+                    {item.attributes.nombre}
                   </h2>
                 </div>
-                <p className="mt-2 text-gray-600">{item.content}</p>
+                <p className="mt-2 text-gray-600">{item.attributes.content}</p>
               </div>
             </div>
           </div>

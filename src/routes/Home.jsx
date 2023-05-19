@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useLoaderData, useOutletContext } from 'react-router-dom';
 import About from '../components/About';
 import Carousel from '../components/Carousel';
 
@@ -11,6 +12,8 @@ import Objetivo from '../components/Objetivo';
 import WhatsAppButton from '../components/WhatsAppButton';
 
 function Home() {
+  const { informacionDeContacto } = useOutletContext();
+  const { testimonios, proveedores } = useLoaderData();
   const [data, setData] = useState([]);
   const [items, setItems] = useState(null);
   const [page, setPage] = useState(1);
@@ -27,9 +30,6 @@ function Home() {
       });
   }, [page]);
   useEffect(() => {
-    fetch('/data.json')
-      .then((response) => response.json())
-      .then((res) => setData(res));
     fetch('https://strapi-erconsrl.onrender.com/api/items?populate=img')
       .then((response) => response.json())
       .then((res) => {
@@ -58,14 +58,14 @@ function Home() {
 
         <Objetivo />
 
-        <Proveedores items={data.proveedores} />
+        <Proveedores items={proveedores} />
 
-        <Testimonios items={data.testimonios} />
+        <Testimonios data={testimonios} />
 
         {/* <FacebookChat /> */}
         <Contacto />
 
-        <WhatsAppButton phoneNumber={data.contacto.whatsapp} />
+        <WhatsAppButton data={informacionDeContacto.whatsapp} />
       </div>
     )
   );
