@@ -3,10 +3,10 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useLoaderData } from 'react-router-dom';
+import { useGetTestimoniosQuery } from '../services/api';
 
-function TestimoniosSlider({ data }) {
-  console.log('data', data);
+function TestimoniosSlider() {
+  const { data, isFetching } = useGetTestimoniosQuery();
 
   const settings = {
     dots: true,
@@ -37,10 +37,14 @@ function TestimoniosSlider({ data }) {
     ],
   };
 
+  if (isFetching) return <div />;
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
+    <div className="max-w-6xl mx-auto my-8 px-4 py-16">
+      <h3 className="mb-4 text-3xl font-semibold uppercase tracking-wide text-center">
+        Testimonios
+      </h3>
       <Slider {...settings}>
-        {data.map((item, index) => (
+        {data.data.map((item, index) => (
           <div key={`testimonio-${index}`} className="px-2">
             <div className="mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="px-4 py-3">

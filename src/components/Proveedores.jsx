@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-props-no-spreading */
-import Slider from 'react-slick';
 import useBreakpoint from '../hooks/useBreakpoint';
+import { useGetProveedoresQuery } from '../services/api';
 
 const settings = {
   dots: false,
@@ -13,7 +13,9 @@ const settings = {
   autoplaySpeed: 1000,
 };
 
-function Proveedores({ items }) {
+function Proveedores() {
+  const { data, isFetching } = useGetProveedoresQuery();
+  console.log('data', data);
   const breakpoint = useBreakpoint();
   if (breakpoint === 'sm') {
     settings.slidesToShow = 3;
@@ -27,26 +29,25 @@ function Proveedores({ items }) {
   if (breakpoint === 'xl') {
     settings.slidesToShow = 6;
   }
+  if (isFetching) return <div />;
   return (
     <div className="mt-10 mx-auto text-center lg:max-w-5xl">
       <h3 className="mb-4 text-3xl font-semibold uppercase tracking-wide">
         Nuestros proveedores
       </h3>
-      <div className="">
-        <Slider {...settings}>
-          {items.map((item, index) => (
-            <div key={`item-proveedor-${index}`} className="px-2">
-              {' '}
-              {/* Añade margen horizontal para separar un poco las imágenes */}
-              <img
-                className="w-full h-auto rounded-md transition duration-500 ease-in-out transform"
-                src={item.image}
-                alt="proveedores"
-                style={{ maxHeight: '250px' }} // Ajusta la altura máxima de las imágenes para que sean más grandes
-              />
-            </div>
-          ))}
-        </Slider>
+      <div className="flex flex-wrap justify-center">
+        {data.data.map((item, index) => (
+          <div key={`item-proveedor-${index}`} className="p-2">
+            {' '}
+            {/* Añade margen horizontal para separar un poco las imágenes */}
+            <img
+              className="w-full h-auto rounded-md transition duration-500 ease-in-out transform"
+              src={item.attributes.imagen.data.attributes.url}
+              alt="proveedores"
+              style={{ maxHeight: '70px' }} // Ajusta la altura máxima de las imágenes para que sean más grandes
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

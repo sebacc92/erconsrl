@@ -5,17 +5,12 @@ import React, { useState } from 'react';
 import Card from './Card';
 
 function Pagination({ itemsPerPage, totalItems, paginate }) {
-  console.log('paginate', paginate);
-  console.log('totalItems', totalItems);
-  console.log('itemsPerPage', itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
-  console.log('pageNumbers', pageNumbers);
-
   return (
     <nav>
       <ul className="flex justify-center mt-8">
@@ -41,13 +36,11 @@ function Pagination({ itemsPerPage, totalItems, paginate }) {
 }
 
 function PaginatedList({ items, itemsPerPage }) {
-  console.log('items', items);
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
-  console.log('currentItems', currentItems);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

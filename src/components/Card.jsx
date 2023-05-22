@@ -1,15 +1,14 @@
 import { NavLink } from 'react-router-dom';
 
-function Card({ images, location, categoria, titulo }) {
-  console.log('images', images);
+function Card({ imagenes, location, categoria, titulo, id }) {
   return (
-    <NavLink to={`/emprendimientos/${titulo}`}>
+    <NavLink to={`/edificio/${id}`}>
       <div className="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-white dark:bg-gray-800 dark:border-gray-700 transition-all hover:shadow-lg hover:shadow-gray-400 hover:-translate-y-2 hover:duration-400 cursor-pointer">
         <div className="relative">
-          {images?.data?.[0].attributes.url && (
+          {imagenes?.data?.[0].attributes.url && (
             <img
               className="rounded-t-lg h-96"
-              src={images.data[0].attributes.url}
+              src={imagenes.data[0].attributes.url}
               alt=""
               height="380"
             />

@@ -1,12 +1,8 @@
-/* eslint-disable react/no-array-index-key */
-
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import axios from 'axios';
+import { useGetAboutQuery } from '../services/api';
 
 function About() {
-  const [data, setData] = useState(null);
+  const { data, isFetching } = useGetAboutQuery();
+
   const images = [
     '/assets/nosotros/experience-image-1.jpg',
     '/assets/nosotros/experience-image-2.jpg',
@@ -15,28 +11,12 @@ function About() {
     '/assets/nosotros/experience-image-5.webp',
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://strapi-erconsrl.onrender.com/api/acerca-de-nosotro'
-        );
-
-        setData(response.data);
-      } catch (error) {
-        console.error('Error al obtener los datos: ', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const navigate = useNavigate();
   const contentWithBreaks = data?.data?.attributes?.content?.replace(
     /\n/g,
     '<br />'
   );
 
+  if (isFetching) return <div />;
   return (
     <div className="md:container mx-auto px-4 py-24" id="nosotros">
       <div className="flex flex-wrap -mx-2">
@@ -48,24 +28,6 @@ function About() {
             className="text-gray-600 leading-relaxed mb-4"
             dangerouslySetInnerHTML={{ __html: contentWithBreaks }}
           />
-
-          {/* <p className="text-gray-600 leading-relaxed mb-4">
-            <ReactMarkdown>{contentWithBreaks}</ReactMarkdown>
-          </p> */}
-          <button
-            onClick={() => navigate('/emprendimientos')}
-            type="button"
-            className="border border-[#990000] text-[#990000] hover:bg-[#990000] hover:text-white py-2 px-4 mr-2 rounded"
-          >
-            Ver emprendimientos
-          </button>
-          <button
-            onClick={() => navigate('/nosotros')}
-            type="button"
-            className="text-[#990000] hover:underline py-2 px-4 rounded"
-          >
-            Conocer mas
-          </button>
         </div>
         <div className="w-full md:w-1/2 px-2 mt-8 md:mt-0">
           <div className="grid grid-cols-3 gap-2">

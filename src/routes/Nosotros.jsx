@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import About from '../components/About';
-import WhatsAppButton from '../components/WhatsAppButton';
 
 function Nosotros() {
   const [data, setData] = useState(null);
@@ -35,7 +34,6 @@ function Nosotros() {
             </div>
           </div>
         </div>
-        <WhatsAppButton phoneNumber={data.contacto.whatsapp} />
       </div>
     )
   );

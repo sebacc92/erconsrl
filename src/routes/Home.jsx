@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 import About from '../components/About';
 import Carousel from '../components/Carousel';
@@ -9,65 +8,26 @@ import Contacto from './Contacto';
 import Testimonios from '../components/Testimonios';
 import Emprendimientos from '../components/Emprendimientos';
 import Objetivo from '../components/Objetivo';
-import WhatsAppButton from '../components/WhatsAppButton';
+import LoadingWrapper from '../components/LoadingWrapper';
 
 function Home() {
-  const { informacionDeContacto } = useOutletContext();
-  const { testimonios, proveedores } = useLoaderData();
-  const [data, setData] = useState([]);
-  const [items, setItems] = useState(null);
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  useEffect(() => {
-    axios
-      .get(
-        `https://strapi-erconsrl.onrender.com/api/emrendimientos?pagination[page]=${page}&populate=*`
-      )
-      .then((response) => {
-        console.log('response emprendimientos', response);
-        setData(response.data.data);
-        setTotalPages(response.data.meta.pagination.pageCount);
-      });
-  }, [page]);
-  useEffect(() => {
-    fetch('https://strapi-erconsrl.onrender.com/api/items?populate=img')
-      .then((response) => response.json())
-      .then((res) => {
-        const list = res.data.map((item) => ({
-          title: item.attributes.titulo,
-          original: item.attributes.img.data.attributes.url,
-          fullscreen: item.attributes.img.data.attributes.url,
-          descriptionCard: item.attributes.description,
-          buttonLink: item.attributes.link,
-        }));
-        setItems(list);
-      });
-  }, []);
-
-  const emprendimientosDestacados = data.filter((e) => e.attributes.destacado);
-
   return (
-    data &&
-    items && (
-      <div>
-        <Carousel items={items} />
+    <div>
+      <Carousel />
 
-        <About />
+      <About />
 
-        <Emprendimientos items={emprendimientosDestacados} />
+      <Emprendimientos />
 
-        <Objetivo />
+      <Objetivo />
 
-        <Proveedores items={proveedores} />
+      <Proveedores />
 
-        <Testimonios data={testimonios} />
+      <Testimonios />
 
-        {/* <FacebookChat /> */}
-        <Contacto />
-
-        <WhatsAppButton data={informacionDeContacto.whatsapp} />
-      </div>
-    )
+      {/* <FacebookChat /> */}
+      <Contacto />
+    </div>
   );
 }
 

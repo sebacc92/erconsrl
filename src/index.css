@@ -251,10 +251,6 @@ font-style: italic;
 }
 
 /* Ajusta el alto de las imágenes al 100% del contenedor */
-.react-image-gallery .image-gallery-image {
-    height: 100%;
-    object-fit: contain; /* Para mantener las proporciones de la imagen */
-}
 
 .custom-underline {
     text-underline-offset: 10px; /* Ajusta este valor para controlar el espacio entre el subrayado y el texto */

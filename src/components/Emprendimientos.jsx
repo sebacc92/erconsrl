@@ -1,7 +1,10 @@
+import { useGetEdificiosDestacadosQuery } from '../services/api';
 import Card from './Card';
 
-function Emprendimientos({ items }) {
-  console.log('items', items);
+function Emprendimientos() {
+  const { data, isFetching } = useGetEdificiosDestacadosQuery();
+  if (isFetching) return <div />;
+  const items = data.data;
   return (
     <div className="nuestros-emprendimientos px-2 py-16 bg-gray-200">
       <div className="sm:mx-4 mt-8">
@@ -12,11 +15,12 @@ function Emprendimientos({ items }) {
           <div className="grid justify-items-center align-items-center gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-3">
             {items.map((item) => (
               <Card
-                description={item.description}
-                images={item.images}
-                location={item.location}
-                categoria={item.categoria}
-                titulo={item.titulo}
+                description={item.attributes.description}
+                imagenes={item.attributes.imagenes}
+                location={item.attributes.location}
+                categoria={item.attributes.categoria.data.attributes.nombre}
+                titulo={item.attributes.titulo}
+                id={item.id}
               />
             ))}
           </div>

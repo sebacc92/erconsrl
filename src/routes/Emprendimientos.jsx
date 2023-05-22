@@ -12,7 +12,7 @@ function Emprendimientos() {
   useEffect(() => {
     axios
       .get(
-        `https://strapi-erconsrl.onrender.com/api/emrendimientos?pagination[page]=${page}&populate=*`
+        `https://strapi-erconsrl.onrender.com/api/edificios?pagination[page]=${page}&populate=*`
       )
       .then((response) => {
         setData(response.data.data);

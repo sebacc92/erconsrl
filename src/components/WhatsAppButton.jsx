@@ -1,9 +1,15 @@
-function WhatsAppButton({ phoneNumber }) {
+import { useGetInformacionDeContactoQuery } from '../services/api';
+
+function WhatsAppButton() {
+  const { data, isFetching } = useGetInformacionDeContactoQuery();
   const message = encodeURIComponent(
     'Hola, me gustaría obtener más información.'
-  ); // Reemplaza con el mensaje que quieras enviar
+  );
 
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+  if (isFetching) return <div />;
+  const { whatsapp } = data.data.attributes;
+
+  const whatsappUrl = `https://wa.me/${whatsapp}?text=${message}`;
 
   return (
     <a
