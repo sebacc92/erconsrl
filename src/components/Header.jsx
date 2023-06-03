@@ -96,7 +96,7 @@ function Header({ categoriesData, logoData }) {
             className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
             aria-current="page"
             onClick={() => setIsMobileMenuOpen(false)}
-            href="nosotros"
+            href="#nosotros"
           >
             <div>
               <svg
@@ -168,7 +168,7 @@ function Header({ categoriesData, logoData }) {
                   key={category.id}
                   aria-current="page"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  href={`/emprendimientos/categoria/${category.attributes.nombre}`}
+                  href={`/edificios`}
                   className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
                   {category.attributes.nombre}
@@ -180,7 +180,7 @@ function Header({ categoriesData, logoData }) {
           <Link
             aria-current="page"
             onClick={() => setIsMobileMenuOpen(false)}
-            href="/contacto"
+            href="#contacto"
             className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
           >
             <div>
@@ -228,7 +228,7 @@ function Header({ categoriesData, logoData }) {
           <Link
             className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase custom-underline"
             aria-current="page"
-            href="/nosotros"
+            href="#nosotros"
             data-te-nav-link-ref
           >
             Nosotros
@@ -250,7 +250,7 @@ function Header({ categoriesData, logoData }) {
                     <Link
                       key={category.id}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      href={`/emprendimientos/categoria/${category.attributes.nombre}`}
+                      href={`/edificios`}
                     >
                       {category.attributes.nombre}
                     </Link>
@@ -262,7 +262,7 @@ function Header({ categoriesData, logoData }) {
           <Link
             className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-200 mr-4 hover:bg-red-500 font-bold transition-colors duration-300 ease-in-out py-2 px-4 rounded uppercase custom-underline"
             aria-current="page"
-            href="/contacto"
+            href="#contacto"
             data-te-nav-link-ref
           >
             Contacto

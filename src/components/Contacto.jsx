@@ -47,7 +47,7 @@ function Contacto({ contactoData }) {
   const { telefono, direccion, email } = contactoData.data.attributes;
 
   return (
-    <div className="isolate bg-gray-100 py-8 px-4 sm:py-32 lg:px-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-2 mt-[7rem]">
+    <div id="#contacto" className="isolate bg-gray-100 py-8 px-4 sm:py-32 lg:px-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-2 mt-[7rem]">
       <section className="">
         <Map
           address={{
