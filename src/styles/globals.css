@@ -25,3 +25,45 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-150%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  transform: translateY(0);
+}
+
+.submenu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.submenu > svg {
+  font-size: 1.5em;
+  margin-left: 0.5em;
+}
+
+.submenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.submenu.open ul {
+  max-height: 300px;
+}
+
+.submenu li {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
