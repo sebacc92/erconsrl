@@ -5,6 +5,7 @@ import ImageGallery from 'react-image-gallery';
 import useBreakpoint from '@/hooks/useBreakpoint';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import CustomDescription from './CustomDescription';
+import Image from 'next/image';
 
 function Carousel({ carouselData }) {
   const breakpoint = useBreakpoint();
@@ -22,7 +23,7 @@ function Carousel({ carouselData }) {
   const renderCustomSlide = (item) => (
     <div key={item.original} className="relative w-full h-[50vh] lg:h-[60vh]">
       <div className="absolute top-0 left-0 w-full h-full">
-        <img
+        <Image
           src={item.original}
           alt="Imagen del slide"
           className="w-full h-full object-cover"

@@ -1,6 +1,7 @@
 'use client'
 
 import useBreakpoint from '@/hooks/useBreakpoint';
+import Image from 'next/image';
 
 const settings = {
   dots: false,
@@ -43,7 +44,7 @@ function Proveedores({ proveedoresData }) {
           <div key={`item-proveedor-${index}`} className="p-2">
             {' '}
             {/* Añade margen horizontal para separar un poco las imágenes */}
-            <img
+            <Image
               className="w-full h-auto rounded-md transition duration-500 ease-in-out transform"
               src={item.attributes.imagen.data.attributes.url}
               alt="proveedores"

@@ -13,6 +13,8 @@ import Header from '@/components/Header';
 import dynamic from 'next/dynamic';
 
 import 'react-image-gallery/styles/css/image-gallery.css';
+import WhatsAppButton from '@/components/WhatsAppButton';
+import Image from 'next/image';
 
 const Map = dynamic(
   () => import('@/components/Map'), // reemplaza './Map' con la ruta de tu componente Map
@@ -34,15 +36,36 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
   if (!edificioData) return <div />
 
   const edificio = edificioData.data.attributes;
+  console.log('edificio', edificio)
 
   const listImages = edificio.imagenes?.data?.map((item) => ({
     original: item.attributes.url,
     fullscreen: item.attributes.url,
+    renderItem: () => (
+      <div className="flex items-center justify-center h-[500px] bg-gray-200 shadow-md overflow-hidden">
+        <Image
+          src={item.attributes.url}
+          alt="Descripción de la imagen"
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
+    ),
   }));
-
+  
   const listPlanos = edificio.planos?.data?.map((item) => ({
     original: item.attributes.url,
     fullscreen: item.attributes.url,
+    renderItem: () => (
+      <div className="flex items-center justify-center h-[500px] bg-gray-200 shadow-md overflow-hidden">
+        <Image
+          src={item.attributes.url}
+          alt="Descripción de la imagen"
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
+    ),
   }));
 
   return (
@@ -51,11 +74,13 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
       <Header categoriesData={categoriesData} logoData={logoData} />  
       <div className="mt-[7rem]">
         <div className="relative mx-auto">
-          {edificio?.imagenes?.length > 0 && (
-            <img
+          {edificio?.imagenes?.data?.length > 0 && (
+            <Image
               src={edificio.imagenes.data[0].attributes.url}
               alt="Descripción de la imagen"
               className="w-full h-[550px] object-cover"
+              width={700}
+              height={100}
             />
           )}
           <div className="absolute z-[4] top-0 w-full">
@@ -222,21 +247,23 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
           </section>
         )}
         {edificio.latitud && edificio.longitud && (
-          <section
-            className="map my-8 mx-auto max-w-[#1600] sm:p-8 md:p-12 lg:p-16 xl:p-20"
-            id="ubicacion"
-          >
-            <h2 className="text-center font-bold text-3xl mb-2">Ubicación</h2>
-            <Map
-              address={{
-                name: 'La Plata, Buenos Aires',
-                lat: edificio.latitud,
-                lng: edificio.longitud,
-              }}
-            />
-          </section>
-        )}
+  <section
+    className="map my-8 mx-auto max-w-[900px] sm:p-8 md:p-12 lg:p-16 xl:p-20"
+    id="ubicacion"
+  >
+    <h2 className="text-center font-bold text-3xl mb-2">Ubicación</h2>
+    <Map
+      address={{
+        name: 'La Plata, Buenos Aires',
+        lat: edificio.latitud,
+        lng: edificio.longitud,
+      }}
+    />
+  </section>
+)}
+
       </div>
+      <WhatsAppButton contactoData={contactoData} />
     </div>
   );
 }

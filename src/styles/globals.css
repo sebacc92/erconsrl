@@ -67,3 +67,56 @@ body {
   border-bottom: 1px solid #ccc;
   background-color: #f5f5f5;
 }
+
+.button-menu {
+  display: flex;
+  flex-direction: column;
+  width: 1.78rem;
+  height: 1.78rem;
+  border: 0;
+  background: transparent;
+  gap: .5rem;
+}
+
+.button-menu > div {
+  background-color: black;
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all .5s;
+  transform-origin: left;
+}
+
+.button-menu[aria-expanded="true"] div:first-child {
+  transform: rotate(45deg);
+}
+
+.button-menu[aria-expanded="true"] div:nth-child(2) {
+  opacity: 0;
+}
+
+.button-menu[aria-expanded="true"] div:last-child {
+  transform: rotate(-45deg);
+}
+
+/* Ajusta el alto de los slides al 80% del alto del viewport */
+.image-gallery-slides {
+  max-height: 80vh;
+}
+
+/* Ajusta el alto del contenedor de las imágenes al 80% del alto del viewport */
+.react-image-gallery .image-gallery-slide .image-gallery-image {
+  max-height: 80vh;
+}
+
+/* Ajusta el alto de las imágenes al 100% del contenedor */
+
+.custom-underline {
+  text-underline-offset: 10px; /* Ajusta este valor para controlar el espacio entre el subrayado y el texto */
+}
+
+.scale-up-vertical-top{animation:scale-up-vertical-top 0.4s linear} @keyframes scale-up-vertical-top{0%{transform:scaleY(.4);transform-origin:center top}100%{transform:scaleY(1);transform-origin:center top}}
+
+.line-break{
+  white-space: 'pre-wrap';
+}

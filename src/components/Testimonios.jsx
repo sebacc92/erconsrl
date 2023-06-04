@@ -3,6 +3,7 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Image from 'next/image';
 
 function TestimoniosSlider({ testimoniosData }) {
   const settings = {
@@ -47,11 +48,13 @@ function TestimoniosSlider({ testimoniosData }) {
             <div className="mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="px-4 py-3">
                 <div className="flex items-center justify-center">
-                  {item.attributes.imagen?.data?.attributes?.url && <img
-                    className="h-10 w-10 rounded-full mr-2"
-                    src={item.attributes.imagen.data.attributes.url}
-                    alt={item.attributes.nombre}
-                  />}
+                  {item.attributes.imagen?.data?.attributes?.url && (
+                    <Image
+                      className="h-10 w-10 rounded-full mr-2"
+                      src={item.attributes.imagen.data.attributes.url}
+                      alt={item.attributes.nombre}
+                    />
+                  )}
                   <h2 className="text-gray-900 text-lg font-medium">
                     {item.attributes.nombre}
                   </h2>

@@ -1,12 +1,15 @@
 import Edificios from '@/components/Edificios';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home({
   categoriesData,
+  contactoData,
   edificiosData,
 }) {
   return (
     <div>
       <Edificios categoriesData={categoriesData} edificiosData={edificiosData} />
+      <WhatsAppButton contactoData={contactoData} />
     </div>
   );
 }
@@ -28,9 +31,17 @@ export async function getStaticProps() {
     edificiosData = await edificiosRes.json();
   }
 
+  // Fetch data for Informacion de Contacto
+  const contactoRes = await fetch('https://strapi-erconsrl.onrender.com/api/informacion-de-contacto');
+  let contactoData = null;
+  if (contactoRes.status === 200) {
+    contactoData = await contactoRes.json();
+  }
+
   return {
     props: {
       categoriesData,
+      contactoData,
       edificiosData,
     },
   };

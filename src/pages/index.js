@@ -8,6 +8,7 @@ import Testimonios from '@/components/Testimonios';
 import Contacto from '@/components/Contacto';
 import Topbar from '@/components/Topbar';
 import Header from '@/components/Header';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home({
   aboutData,
@@ -34,6 +35,7 @@ export default function Home({
       <Testimonios testimoniosData={testimoniosData} />
       {/* <FacebookChat /> */}
       <Contacto contactoData={contactoData} />
+      <WhatsAppButton contactoData={contactoData} />
     </div>
   );
 }

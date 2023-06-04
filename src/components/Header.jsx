@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Header({ categoriesData, logoData }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ function Header({ categoriesData, logoData }) {
         <div className="flex justify-between items-center flex-shrink-0 mr-6">
           {/* <!-- Logo --> */}
           {logoUrl && <Link className="text-xl text-black" href="/">
-            <img className="h-24" src={logoUrl} alt="Logo Ercon 2" />
+            <Image className="h-24" src={logoUrl} alt="Logo Ercon 2" height={50} width={200} />
           </Link>}
           {/* <!-- Menú desplegable (mobile) --> */}
           <div className="block lg:hidden mr-4">
@@ -72,7 +73,7 @@ function Header({ categoriesData, logoData }) {
             className="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-gray-700"
             href="/"
           >
-            <div>
+            <div className="flex justify-center items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 opacity-75"
@@ -98,7 +99,7 @@ function Header({ categoriesData, logoData }) {
             onClick={() => setIsMobileMenuOpen(false)}
             href="#nosotros"
           >
-            <div>
+            <div className="flex justify-center items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 opacity-75"
@@ -183,7 +184,7 @@ function Header({ categoriesData, logoData }) {
             href="#contacto"
             className="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
           >
-            <div>
+            <div className="flex justify-center items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 opacity-75"
@@ -213,7 +214,7 @@ function Header({ categoriesData, logoData }) {
         <div className="flex justify-between items-center flex-shrink-0 mr-6">
           {/* <!-- Logo --> */}
           <Link className="text-xl text-black" href="/">
-            <img className="h-24" src={logoUrl} alt="Ercon" />
+            <Image className="h-24" src={logoUrl} alt="Ercon" height={50} width={300} />
           </Link>
         </div>
         <div className="text-lg">
