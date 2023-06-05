@@ -9,6 +9,7 @@ import Contacto from '@/components/Contacto';
 import Topbar from '@/components/Topbar';
 import Header from '@/components/Header';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import Footer from '@/components/Footer';
 
 export default function Home({
   aboutData,
@@ -36,6 +37,7 @@ export default function Home({
       {/* <FacebookChat /> */}
       <Contacto contactoData={contactoData} />
       <WhatsAppButton contactoData={contactoData} />
+      <Footer />
     </div>
   );
 }

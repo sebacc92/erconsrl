@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Card({ imagenes, location, categoria, titulo, id }) {
+function Card({ imagen, location, categoria, titulo, id }) {
   return (
     <Link href={`/edificios/${id}`}>
       <div className="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow shadow-white dark:bg-gray-800 dark:border-gray-700 transition-all hover:shadow-lg hover:shadow-gray-400 hover:-translate-y-2 hover:duration-400 cursor-pointer w-72 h-96 flex flex-col justify-between">
         <div className="relative h-2/3">
-          {imagenes?.data?.[0].attributes.url && (
+          {imagen?.data?.attributes?.url && (
             <Image
               className="rounded-t-lg h-full w-full object-cover"
-              src={imagenes.data[0].attributes.url}
+              src={imagen?.data?.attributes?.url}
               alt=""
+              fill
             />
           )}
           {categoria && <span

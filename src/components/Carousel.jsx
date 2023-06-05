@@ -27,6 +27,7 @@ function Carousel({ carouselData }) {
           src={item.original}
           alt="Imagen del slide"
           className="w-full h-full object-cover"
+          fill
         />
         <CustomDescription
           description={items[currentIndex].descriptionCard}

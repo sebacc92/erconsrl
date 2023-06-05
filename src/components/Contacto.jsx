@@ -14,40 +14,47 @@ function Contacto({ contactoData }) {
   const [recaptchaInstance, setRecaptchaInstance] = useState(null);
   const [isVisibleAlertSuccess, setIsVisibleAlertSuccess] = useState(false);
 
-  const handleRecaptcha = async (event) => {
-    const recaptchaValue = await recaptchaInstance.executeAsync();
-    if (recaptchaValue) {
-      try {
-        const form = event.target;
-        const formData = new FormData(form);
-        const _data = Object.fromEntries(formData);
-        await fetch('https://api.erconsrl.com.ar/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(_data),
-        });
-      } catch (err) {
-        console.error('err', err);
-      }
-      setIsVisibleAlertSuccess(true);
-      // Realiza la operación deseada con los datos del formulario
-    } else {
-      alert('Por favor complete la verificacion de reCAPTCHA');
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRecaptcha(e);
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const _data = Object.fromEntries(formData);
+
+    if (!_data.firstName || !_data.lastName || !_data.email || !_data.phoneNumber || !_data.message) {
+        alert('Por favor, complete todos los campos requeridos.');
+        return;
+    }
+
+    handleRecaptcha(e, _data);
+  };
+
+  const handleRecaptcha = async (event, formData) => {
+      const recaptchaValue = await recaptchaInstance.executeAsync();
+      if (recaptchaValue) {
+          try {
+              await fetch('https://api.erconsrl.com.ar/send-emaill', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(formData),
+              });
+          } catch (err) {
+              console.error('err', err);
+          }
+          setIsVisibleAlertSuccess(true);
+          // Realiza la operación deseada con los datos del formulario
+      } else {
+          alert('Por favor complete la verificacion de reCAPTCHA');
+      }
   };
 
   if (!contactoData) return <div />;
   const { telefono, direccion, email } = contactoData.data.attributes;
 
   return (
-    <div id="#contacto" className="isolate bg-gray-100 py-8 px-4 sm:py-32 lg:px-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-2 mt-[7rem]">
+    <div id="#contacto" className="isolate bg-gray-100 py-8 px-4 lg:px-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 lg:grid-cols-2">
       <section className="">
         <Map
           address={{
@@ -107,6 +114,7 @@ function Contacto({ contactoData }) {
                   name="firstName"
                   id="firstName"
                   autoComplete="given-name"
+                  required
                   className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -123,6 +131,7 @@ function Contacto({ contactoData }) {
                   type="text"
                   name="lastName"
                   id="lastName"
+                  required
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -140,6 +149,7 @@ function Contacto({ contactoData }) {
                   type="email"
                   name="email"
                   id="email"
+                  required
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -158,6 +168,7 @@ function Contacto({ contactoData }) {
                   name="phoneNumber"
                   id="phoneNumber"
                   autoComplete="tel"
+                  required
                   className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -174,6 +185,7 @@ function Contacto({ contactoData }) {
                   name="message"
                   id="message"
                   rows={4}
+                  required
                   className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

@@ -1,15 +1,24 @@
 import Edificios from '@/components/Edificios';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Topbar from '@/components/Topbar';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home({
   categoriesData,
   contactoData,
+  logoData,
   edificiosData,
 }) {
   return (
     <div>
-      <Edificios categoriesData={categoriesData} edificiosData={edificiosData} />
-      <WhatsAppButton contactoData={contactoData} />
+      <Topbar contactoData={contactoData} />
+      <Header categoriesData={categoriesData} logoData={logoData} /> 
+      <div className="relative mt-[7rem] lg:mt-36">
+        <Edificios categoriesData={categoriesData} edificiosData={edificiosData} />
+        <WhatsAppButton contactoData={contactoData} />
+        <Footer />
+      </div> 
     </div>
   );
 }
@@ -22,6 +31,13 @@ export async function getStaticProps() {
   let categoriesData = null;
   if (categoriesRes.status === 200) {
     categoriesData = await categoriesRes.json();
+  }
+
+  // Fetch data for Logo
+  const logoRes = await fetch('https://strapi-erconsrl.onrender.com/api/logo?populate=*');
+  let logoData = null;
+  if (logoRes.status === 200) {
+    logoData = await logoRes.json();
   }
 
   // Fetch data for Edificios
@@ -41,6 +57,7 @@ export async function getStaticProps() {
   return {
     props: {
       categoriesData,
+      logoData,
       contactoData,
       edificiosData,
     },

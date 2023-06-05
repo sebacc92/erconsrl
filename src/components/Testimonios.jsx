@@ -53,6 +53,8 @@ function TestimoniosSlider({ testimoniosData }) {
                       className="h-10 w-10 rounded-full mr-2"
                       src={item.attributes.imagen.data.attributes.url}
                       alt={item.attributes.nombre}
+                      height={30}
+                      width={30}
                     />
                   )}
                   <h2 className="text-gray-900 text-lg font-medium">

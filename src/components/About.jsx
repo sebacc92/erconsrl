@@ -27,16 +27,22 @@ function About({ aboutData }) {
                 src={imagenes[2].attributes.url}
                 alt="Imagen 1"
                 className="w-full h-56 object-cover"
+                height={100}
+                width={100}
               />
               <Image
                 src={imagenes[4].attributes.url}
                 alt="Imagen 2"
                 className="w-full h-56 object-cover"
+                height={100}
+                width={100}
               />
               <Image
                 src={imagenes[0].attributes.url}
                 alt="Imagen 3"
                 className="w-full h-56 object-cover"
+                height={100}
+                width={100}
               />
             </div>
             <div className="grid grid-cols-3 gap-2 mt-2">
@@ -44,11 +50,15 @@ function About({ aboutData }) {
                 src={imagenes[3].attributes.url}
                 alt="Imagen 4"
                 className="w-full h-56 object-cover col-span-1"
+                height={100}
+                width={100}
               />
               <Image
                 src={imagenes[1].attributes.url}
                 alt="Imagen 5"
                 className="w-full h-56 object-cover col-span-2"
+                height={100}
+                width={100}
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import ImageGallery from 'react-image-gallery';
 import YouTube from 'react-youtube';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +16,7 @@ import dynamic from 'next/dynamic';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 const Map = dynamic(
   () => import('@/components/Map'), // reemplaza './Map' con la ruta de tu componente Map
@@ -43,11 +45,9 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
     fullscreen: item.attributes.url,
     renderItem: () => (
       <div className="flex items-center justify-center h-[500px] bg-gray-200 shadow-md overflow-hidden">
-        <Image
+        <img
           src={item.attributes.url}
           alt="Descripción de la imagen"
-          layout="fill"
-          objectFit="contain"
         />
       </div>
     ),
@@ -58,11 +58,9 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
     fullscreen: item.attributes.url,
     renderItem: () => (
       <div className="flex items-center justify-center h-[500px] bg-gray-200 shadow-md overflow-hidden">
-        <Image
+        <img
           src={item.attributes.url}
           alt="Descripción de la imagen"
-          layout="fill"
-          objectFit="contain"
         />
       </div>
     ),
@@ -74,9 +72,9 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
       <Header categoriesData={categoriesData} logoData={logoData} />  
       <div className="mt-[7rem]">
         <div className="relative mx-auto">
-          {edificio?.imagenes?.data?.length > 0 && (
+          {edificio?.imagenPrincipal?.data?.length > 0 && (
             <Image
-              src={edificio.imagenes.data[0].attributes.url}
+              src={edificio?.imagenPrincipal?.data[0].attributes.url}
               alt="Descripción de la imagen"
               className="w-full h-[550px] object-cover"
               width={700}
@@ -264,6 +262,8 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
 
       </div>
       <WhatsAppButton contactoData={contactoData} />
+
+      <Footer />
     </div>
   );
 }
@@ -305,7 +305,7 @@ export async function getStaticProps({ params }) {
   }
 
   // Fetch data for Edificio
-  const edificioRes = await fetch(`https://strapi-erconsrl.onrender.com/api/edificios/${params.id}?populate=imagenes,planos`);
+  const edificioRes = await fetch(`https://strapi-erconsrl.onrender.com/api/edificios/${params.id}?populate=*`);
   let edificioData = null;
   if (edificioRes.status === 200) {
     edificioData = await edificioRes.json();

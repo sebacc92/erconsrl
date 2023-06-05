@@ -1,6 +1,7 @@
 import Card from './Card';
 
 function EmprendimientosDestacados({ destacadosData }) {
+  console.log('destacadosData', destacadosData)
   if (!destacadosData) return <div />;
 
   return (
@@ -15,7 +16,7 @@ function EmprendimientosDestacados({ destacadosData }) {
               <Card
                 key={item.id}
                 description={item.attributes.description}
-                imagenes={item.attributes.imagenes}
+                imagen={item.attributes.imagenPrincipal}
                 location={item.attributes.location}
                 categoria={item.attributes.categoria?.data?.attributes?.nombre}
                 titulo={item.attributes.titulo}

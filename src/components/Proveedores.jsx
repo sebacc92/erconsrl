@@ -48,7 +48,9 @@ function Proveedores({ proveedoresData }) {
               className="w-full h-auto rounded-md transition duration-500 ease-in-out transform"
               src={item.attributes.imagen.data.attributes.url}
               alt="proveedores"
-              style={{ maxHeight: '70px' }} // Ajusta la altura máxima de las imágenes para que sean más grandes
+              
+              height={50}
+              width={50}
             />
           </div>
         ))}

@@ -43,7 +43,7 @@ function Header({ categoriesData, logoData }) {
         <div className="flex justify-between items-center flex-shrink-0 mr-6">
           {/* <!-- Logo --> */}
           {logoUrl && <Link className="text-xl text-black" href="/">
-            <Image className="h-24" src={logoUrl} alt="Logo Ercon 2" height={50} width={200} />
+            <Image className="h-24" src={logoUrl} alt="Logo Ercon 2" height={50} width={300} />
           </Link>}
           {/* <!-- Menú desplegable (mobile) --> */}
           <div className="block lg:hidden mr-4">
