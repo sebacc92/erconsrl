@@ -39,7 +39,7 @@ function Carousel({ carouselData }) {
   );
 
   return (
-    <div className="relative mt-[7rem] lg:mt-36">
+    <div id="inicio" className="relative mt-[7rem] lg:mt-36">
       <ImageGallery
         items={items}
         renderItem={renderCustomSlide}

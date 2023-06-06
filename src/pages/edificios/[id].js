@@ -72,9 +72,9 @@ function Edificio({ contactoData, categoriesData, logoData, edificioData }) {
       <Header categoriesData={categoriesData} logoData={logoData} />  
       <div className="mt-[7rem]">
         <div className="relative mx-auto">
-          {edificio?.imagenPrincipal?.data?.length > 0 && (
+          {edificio?.imagenPrincipal?.data && (
             <Image
-              src={edificio?.imagenPrincipal?.data[0].attributes.url}
+              src={edificio?.imagenPrincipal?.data?.attributes.url}
               alt="Descripción de la imagen"
               className="w-full h-[550px] object-cover"
               width={700}
